@@ -5,12 +5,13 @@ import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
 // TODO: Replace the following with your app's Firebase project configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyAJal7jC57aWAb1j_-zDUQnQSPHdwfju2k",
-    authDomain: "literary-journal.firebaseapp.com",
-    projectId: "literary-journal",
-    storageBucket: "literary-journal.appspot.com",
-    messagingSenderId: "922340660896",
-    appId: "1:922340660896:web:76fbc1e63185cf38289bc5",
+    apiKey: "AIzaSyBlTDwWWB_VNJovqmLuRgLPe61IbPf97Uw",
+    authDomain: "curbiture-34969.firebaseapp.com",
+    projectId: "curbiture-34969",
+    storageBucket: "curbiture-34969.appspot.com",
+    messagingSenderId: "417687321307",
+    appId: "1:417687321307:web:a647f1a989eb820a0deafe",
+    measurementId: "G-NXV0KGQHF7",
 };
 
 // provider.addScope('https://www.googleapis.com/auth/contacts.readonly');

@@ -17,6 +17,9 @@ import { db } from "../firebase";
 import Meta from "../components/home/Meta";
 import Link from "next/link";
 import SocialMediaIcons from "../components/general/SocialMediaIcons";
+import HumansPreview from "../components/previews/HumansPreview";
+import AdvicePreview from "../components/previews/AdvicePreview";
+import OpinionsPreview from "../components/previews/OpinionsPreview";
 
 const SidebarInfo = () => {
     return (
@@ -64,7 +67,13 @@ const SidebarInfo = () => {
     );
 };
 
-export default function Home({ allPublications, poems, fiction, articles }) {
+export default function Home({
+    allPublications,
+    humans,
+    advice,
+    craigslist,
+    opinions,
+}) {
     return (
         <Container maxWidth="xl" sx={{ paddingTop: "6rem" }}>
             <Meta />
@@ -88,7 +97,7 @@ export default function Home({ allPublications, poems, fiction, articles }) {
                 <Grid
                     item
                     xs={12}
-                    md={2.75}
+                    md={5.75}
                     sx={{
                         display: {
                             xs: "none",
@@ -98,12 +107,12 @@ export default function Home({ allPublications, poems, fiction, articles }) {
                     }}
                 >
                     <Typography variant="h5" sx={{ textAlign: "center" }}>
-                        Prose
+                        Humans (?) of Charlottesville
                     </Typography>
                     <Divider sx={{ margin: ".5rem 0 1rem 0" }} />
-                    {poems &&
-                        poems.map((poem, index) => {
-                            return <PoemPreview poem={poem} key={index} />;
+                    {humans &&
+                        humans.map((human, index) => {
+                            return <HumansPreview human={human} key={index} />;
                         })}
                 </Grid>
                 <Grid
@@ -145,11 +154,11 @@ export default function Home({ allPublications, poems, fiction, articles }) {
                         Poetry
                     </Typography>
                     <Divider sx={{ margin: ".5rem 0 1rem 0" }} />
-                    {fiction &&
-                        fiction.map((story, index) => {
+                    {advice &&
+                        advice.map((advision, index) => {
                             return (
-                                <StoryPreview
-                                    story={story}
+                                <AdvicePreview
+                                    advision={advision}
                                     key={index}
                                     category="poetry"
                                 />
@@ -205,12 +214,12 @@ export default function Home({ allPublications, poems, fiction, articles }) {
                             Articles
                         </Typography>
                         <Divider sx={{ margin: ".5rem 0 1rem 0" }} />
-                        {articles &&
-                            articles.map((article, index) => {
+                        {opinions &&
+                            opinions.map((opinion, index) => {
                                 return (
-                                    <ArticlePreview
-                                        category="articles"
-                                        item={article}
+                                    <OpinionsPreview
+                                        category="opinions"
+                                        item={opinion}
                                         key={index}
                                     />
                                 );
@@ -235,7 +244,7 @@ export default function Home({ allPublications, poems, fiction, articles }) {
                                 <StoryPreview
                                     story={publication}
                                     key={index}
-                                    category="fiction"
+                                    category="publications"
                                 />
                             );
                         })}
@@ -253,54 +262,67 @@ export const getStaticProps = async (context) => {
         orderBy("dateUploaded", "desc"),
         limit(7)
     );
-    const fictionQuery = query(
+    const humansQuery = query(
         publicationsRef,
-        where("categories", "array-contains", "poetry"),
+        where("categories", "array-contains", "humans"),
         orderBy("dateUploaded", "desc"),
         limit(3)
     );
-    const poetryQuery = query(
+    const adviceQuery = query(
         publicationsRef,
-        where("categories", "array-contains", "fiction"),
+        where("categories", "array-contains", "advice"),
 
         orderBy("dateUploaded", "desc"),
         limit(5)
     );
-    const articlesQuery = query(
+    const craigslistQuery = query(
         publicationsRef,
-        where("categories", "array-contains", "article"),
+        where("categories", "array-contains", "craigslist"),
+
+        orderBy("dateUploaded", "desc"),
+        limit(4)
+    );
+    const opinionsQuery = query(
+        publicationsRef,
+        where("categories", "array-contains", "opinions"),
 
         orderBy("dateUploaded", "desc"),
         limit(4)
     );
 
     const allPublicationsSnapshot = await getDocs(allPublicationsQuery);
-    const poetrySnapshot = await getDocs(poetryQuery);
-    const fictionSnapshot = await getDocs(fictionQuery);
-    const articlesSnapshot = await getDocs(articlesQuery);
+    const humansSnapshot = await getDocs(humansQuery);
+    const adviceSnapshot = await getDocs(adviceQuery);
+    const craigslistSnapshot = await getDocs(craigslistQuery);
+    const opinionsSnapshot = await getDocs(opinionsQuery);
     let allPublications = [];
     allPublicationsSnapshot.docs.forEach((doc, index) => {
         allPublications = [...allPublications, doc.data()];
     });
-    let poems = [];
-    poetrySnapshot.docs.forEach((doc, index) => {
-        poems = [...poems, doc.data()];
+    let humans = [];
+    humansSnapshot.docs.forEach((doc, index) => {
+        humans = [...humans, doc.data()];
     });
-    let fiction = [];
-    fictionSnapshot.docs.forEach((doc, index) => {
-        fiction = [...fiction, doc.data()];
+    let advice = [];
+    adviceSnapshot.docs.forEach((doc, index) => {
+        advice = [...advice, doc.data()];
     });
-    let articles = [];
-    articlesSnapshot.docs.forEach((doc, index) => {
-        articles = [...articles, doc.data()];
+    let craigslist = [];
+    craigslistSnapshot.docs.forEach((doc, index) => {
+        craigslist = [...craigslist, doc.data()];
+    });
+    let opinions = [];
+    opinionsSnapshot.docs.forEach((doc, index) => {
+        opinions = [...opinions, doc.data()];
     });
 
     return {
         props: {
             allPublications,
-            poems,
-            fiction,
-            articles,
+            humans,
+            advice,
+            craigslist,
+            opinions,
         },
     };
 };
