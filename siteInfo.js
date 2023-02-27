@@ -14,7 +14,7 @@ import lightTheme from "./styles/themes/theme";
 
 // 1. Meta
 
-const siteName = "The Rumen";
+const siteName = "Curbiture";
 // const siteName = "Cosima Hewes";
 
 // 2. Layout
@@ -90,6 +90,23 @@ const galleryCategories = [
             {
                 name: "letter",
                 href: "/publications/opinions/letters",
+                image: { url: "/images/placeholder.webp", alt: "alt text" },
+            },
+        ],
+    },
+    {
+        name: "craigslist",
+        href: "/publications/craigslist",
+        image: { url: "/images/placeholder.webp", alt: "alt text" },
+        subCategories: [
+            {
+                name: "for sale",
+                href: "/publications/craigslist/for sale",
+                image: { url: "/images/placeholder.webp", alt: "alt text" },
+            },
+            {
+                name: "help wanted",
+                href: "/publications/craigslist/help wanted",
                 image: { url: "/images/placeholder.webp", alt: "alt text" },
             },
         ],

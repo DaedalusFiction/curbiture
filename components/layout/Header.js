@@ -32,29 +32,6 @@ const Header = ({ light }) => {
                     >
                         <Link href="/">{siteName}</Link>
                     </Typography>
-                    {false &&
-                        pages.map((page) => {
-                            return (
-                                <Typography
-                                    key={page.name}
-                                    variant="h5"
-                                    component="p"
-                                    className="nav-link"
-                                    sx={{
-                                        color: light
-                                            ? theme.palette.custom.lightMuted
-                                            : theme.palette.custom.darkMuted,
-                                        "&:hover": {
-                                            color: light
-                                                ? theme.palette.custom.light
-                                                : theme.palette.custom.dark,
-                                        },
-                                    }}
-                                >
-                                    <Link href={page.href}>{page.name}</Link>
-                                </Typography>
-                            );
-                        })}
                 </Box>
                 <Link href={header.buttonOne.href}>
                     <Button

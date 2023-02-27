@@ -4,12 +4,15 @@ let theme = createTheme({
     palette: {
         mode: "light",
         primary: {
-            main: "#341a05", //Bistre
+            // main: "#341a05", //Bistre
+            main: "#ff5a5f", //Bittersweet
             // main: "#084C61",
             off: "#DB504A",
         },
         secondary: {
-            main: "#FFFBC3",
+            // main: "#FFFBC3",
+            // main: "#f4f1bb", //lemon chiffon
+            main: "#b7FFD8",
             // main: "#E3B505",
         },
         background: {

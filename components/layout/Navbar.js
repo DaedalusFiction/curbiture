@@ -204,10 +204,10 @@ const Navbar = () => {
                                                 cursor: "pointer",
                                                 color:
                                                     currentPage === ""
-                                                        ? theme.palette.custom
-                                                              .light
+                                                        ? theme.palette
+                                                              .secondary.main
                                                         : theme.palette.custom
-                                                              .lightMuted,
+                                                              .light,
                                                 "&:hover": {
                                                     color: theme.palette.custom
                                                         .light,
@@ -240,10 +240,10 @@ const Navbar = () => {
                                                             .split(" ")
                                                             .join("")
                                                     )
-                                                        ? theme.palette.custom
-                                                              .light
+                                                        ? theme.palette
+                                                              .secondary.main
                                                         : theme.palette.custom
-                                                              .lightMuted,
+                                                              .light,
                                                     "&:hover": {
                                                         color: theme.palette
                                                             .custom.light,

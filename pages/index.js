@@ -10,16 +10,16 @@ import {
     query,
     where,
 } from "firebase/firestore";
-import PoemPreview from "../components/home/PoemPreview";
 import StoryPreview from "../components/home/StoryPreview";
-import ArticlePreview from "../components/home/ArticlePreview";
 import { db } from "../firebase";
 import Meta from "../components/home/Meta";
 import Link from "next/link";
 import SocialMediaIcons from "../components/general/SocialMediaIcons";
-import HumansPreview from "../components/previews/HumansPreview";
 import AdvicePreview from "../components/previews/AdvicePreview";
-import OpinionsPreview from "../components/previews/OpinionsPreview";
+import OpinionsPreview from "../components/previews/OpinionPreview";
+import HumanPreview from "../components/previews/HumanPreview";
+import CraigslistPreview from "../components/previews/CragislistPreview";
+import OpinionPreview from "../components/previews/OpinionPreview";
 
 const SidebarInfo = () => {
     return (
@@ -112,7 +112,7 @@ export default function Home({
                     <Divider sx={{ margin: ".5rem 0 1rem 0" }} />
                     {humans &&
                         humans.map((human, index) => {
-                            return <HumansPreview human={human} key={index} />;
+                            return <HumanPreview human={human} key={index} />;
                         })}
                 </Grid>
                 <Grid
@@ -141,7 +141,7 @@ export default function Home({
                 <Grid
                     item
                     xs={12}
-                    md={6}
+                    md={2.875}
                     sx={{
                         display: {
                             xs: "none",
@@ -150,17 +150,15 @@ export default function Home({
                         },
                     }}
                 >
-                    <Typography variant="h5" sx={{ textAlign: "center" }}>
-                        Poetry
-                    </Typography>
+                    <Typography variant="h5">Damn Good Advice</Typography>
                     <Divider sx={{ margin: ".5rem 0 1rem 0" }} />
                     {advice &&
                         advice.map((advision, index) => {
                             return (
                                 <AdvicePreview
-                                    advision={advision}
+                                    item={advision}
                                     key={index}
-                                    category="poetry"
+                                    category="advice"
                                 />
                             );
                         })}
@@ -191,7 +189,7 @@ export default function Home({
                 <Grid
                     item
                     xs={12}
-                    md={2.75}
+                    md={2.875}
                     sx={{
                         display: {
                             xs: "none",
@@ -200,7 +198,53 @@ export default function Home({
                         },
                     }}
                 >
-                    <SidebarInfo />
+                    <Typography variant="h5">Opinions</Typography>
+                    <Divider sx={{ margin: ".5rem 0 1rem 0" }} />
+                    {opinions &&
+                        opinions.map((opinion, index) => {
+                            return (
+                                <OpinionPreview
+                                    opinion={opinion}
+                                    key={index}
+                                    category="advice"
+                                />
+                            );
+                        })}
+                </Grid>
+                {/* <Grid
+                    item
+                    xs={12}
+                    md={0.25}
+                    sx={{
+                        display: {
+                            xs: "none",
+                            md: "flex",
+                            flexDirection: "column",
+                        },
+                    }}
+                >
+                    <Box
+                        sx={{
+                            height: "100%",
+                            display: "flex",
+                            justifyContent: "center",
+                            padding: { xs: "none", md: "3.25rem 0" },
+                        }}
+                    >
+                        <Divider orientation="vertical" />
+                    </Box>
+                </Grid> */}
+                <Grid
+                    item
+                    xs={12}
+                    sx={{
+                        display: {
+                            xs: "none",
+                            md: "flex",
+                            flexDirection: "column",
+                        },
+                    }}
+                >
                     <Box
                         sx={{
                             display: {
@@ -210,20 +254,30 @@ export default function Home({
                             },
                         }}
                     >
-                        <Typography variant="h5" sx={{ textAlign: "center" }}>
-                            Articles
+                        <Typography variant="h3" sx={{ textAlign: "center" }}>
+                            The Very Very Best of Craigslist
                         </Typography>
                         <Divider sx={{ margin: ".5rem 0 1rem 0" }} />
-                        {opinions &&
-                            opinions.map((opinion, index) => {
-                                return (
-                                    <OpinionsPreview
-                                        category="opinions"
-                                        item={opinion}
-                                        key={index}
-                                    />
-                                );
-                            })}
+                        <Grid container spacing={4}>
+                            {craigslist &&
+                                craigslist.map((listing, index) => {
+                                    return (
+                                        <Grid item xs={12} key={index} md={3}>
+                                            <Box
+                                                sx={{
+                                                    display: "flex",
+                                                    justifyContent: "center",
+                                                }}
+                                            >
+                                                <CraigslistPreview
+                                                    category="opinions"
+                                                    item={listing}
+                                                />
+                                            </Box>
+                                        </Grid>
+                                    );
+                                })}
+                        </Grid>
                     </Box>
                 </Grid>
                 <Grid
@@ -266,7 +320,7 @@ export const getStaticProps = async (context) => {
         publicationsRef,
         where("categories", "array-contains", "humans"),
         orderBy("dateUploaded", "desc"),
-        limit(3)
+        limit(1)
     );
     const adviceQuery = query(
         publicationsRef,
@@ -287,7 +341,7 @@ export const getStaticProps = async (context) => {
         where("categories", "array-contains", "opinions"),
 
         orderBy("dateUploaded", "desc"),
-        limit(4)
+        limit(2)
     );
 
     const allPublicationsSnapshot = await getDocs(allPublicationsQuery);
