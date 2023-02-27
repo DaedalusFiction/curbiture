@@ -21,7 +21,11 @@ const AdvicePreview = ({ item }) => {
                         );
                     })}
                 </Box>
-                <Typography variant="h4" className="link">
+                <Typography
+                    variant="h4"
+                    className="link"
+                    sx={{ marginBottom: ".5em" }}
+                >
                     <Link href={itemHref}>{item.fields[0].value}</Link>
                 </Typography>
                 {/* <Typography

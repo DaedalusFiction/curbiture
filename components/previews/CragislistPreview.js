@@ -50,7 +50,7 @@ const CraigslistPreview = ({ item }) => {
                 <Typography
                     className="link"
                     variant="h4"
-                    sx={{ textAlign: "center" }}
+                    sx={{ textAlign: "center", marginBottom: ".5em" }}
                 >
                     <Link href={itemHref}>{item.fields[0].value}</Link>
                 </Typography>

@@ -16,11 +16,10 @@ import Meta from "../components/home/Meta";
 import Link from "next/link";
 import SocialMediaIcons from "../components/general/SocialMediaIcons";
 import AdvicePreview from "../components/previews/AdvicePreview";
-import OpinionsPreview from "../components/previews/OpinionPreview";
-import HumanPreview from "../components/previews/HumanPreview";
 import CraigslistPreview from "../components/previews/CragislistPreview";
 import OpinionPreview from "../components/previews/OpinionPreview";
 import theme from "../styles/themes/theme";
+import MiscPreview from "../components/previews/MiscPreview";
 
 const SidebarInfo = () => {
     return (
@@ -70,7 +69,7 @@ const SidebarInfo = () => {
 
 export default function Home({
     allPublications,
-    humans,
+    misc,
     advice,
     craigslist,
     opinions,
@@ -91,7 +90,7 @@ export default function Home({
                             <span style={{ textDecoration: "underline" }}>
                                 <Link href="/subscribe">Subscribe</Link>
                             </span>{" "}
-                            to our mailing list!
+                            to our mailing list, motherfuckers
                         </Typography>
                     </Box>
                 </Grid>
@@ -105,12 +104,12 @@ export default function Home({
                     }}
                 >
                     <Typography variant="h3" sx={{ textAlign: "center" }}>
-                        Humans (?) of Charlottesville
+                        Miscellany
                     </Typography>
                     <Divider sx={{ margin: ".5rem 0 1rem 0" }} />
-                    {humans &&
-                        humans.map((human, index) => {
-                            return <HumanPreview human={human} key={index} />;
+                    {misc &&
+                        misc.map((misc, index) => {
+                            return <MiscPreview misc={misc} key={index} />;
                         })}
                 </Grid>
                 <Grid
@@ -270,7 +269,7 @@ export default function Home({
                             },
                         }}
                     >
-                        <Typography variant="h3" sx={{ marginBottom: ".5em" }}>
+                        <Typography variant="h3" sx={{ marginBottom: "2em" }}>
                             The Very Very Best of Craigslist
                         </Typography>
                         <Grid container spacing={4}>
@@ -320,6 +319,45 @@ export default function Home({
                     <SidebarInfo />
                 </Grid>
             </Grid>
+            <Box
+                className="section"
+                sx={{
+                    background: theme.palette.background.accent,
+                    display: "flex",
+                    justifyContent: "center",
+                }}
+            >
+                <Box sx={{ maxWidth: "70ch" }}>
+                    <Typography
+                        sx={{
+                            textAlign: "center",
+                            margin: "0 2rem",
+                        }}
+                    >
+                        CURBITURE is a literary journal that shows its title
+                        capitalized or in all caps depending on the whims of its
+                        web developer, who is also one of three major
+                        contributors. The web developer/editor, Owen Cash, along
+                        with writer/editor Sandy Beaches and writer/editor
+                        Kithis the Salient take great pride in the quality and
+                        poignancy of their work and the fitness of their slim
+                        figures.
+                    </Typography>
+                    <br />
+                    <Typography
+                        sx={{
+                            textAlign: "center",
+                            margin: "0 2rem",
+                        }}
+                    >
+                        If you are an MFA student or undergrad, or aspiring
+                        career writer, and you need something to put on your
+                        resume, please contact Curbiture and we will put you on
+                        the masthead. You don&rsquo;t even have to contribute or
+                        anything.
+                    </Typography>
+                </Box>
+            </Box>
         </Container>
     );
 }
@@ -331,9 +369,9 @@ export const getStaticProps = async (context) => {
         orderBy("dateUploaded", "desc"),
         limit(7)
     );
-    const humansQuery = query(
+    const miscQuery = query(
         publicationsRef,
-        where("categories", "array-contains", "humans"),
+        where("categories", "array-contains", "misc"),
         orderBy("dateUploaded", "desc"),
         limit(1)
     );
@@ -360,7 +398,7 @@ export const getStaticProps = async (context) => {
     );
 
     const allPublicationsSnapshot = await getDocs(allPublicationsQuery);
-    const humansSnapshot = await getDocs(humansQuery);
+    const miscSnapshot = await getDocs(miscQuery);
     const adviceSnapshot = await getDocs(adviceQuery);
     const craigslistSnapshot = await getDocs(craigslistQuery);
     const opinionsSnapshot = await getDocs(opinionsQuery);
@@ -368,9 +406,9 @@ export const getStaticProps = async (context) => {
     allPublicationsSnapshot.docs.forEach((doc, index) => {
         allPublications = [...allPublications, doc.data()];
     });
-    let humans = [];
-    humansSnapshot.docs.forEach((doc, index) => {
-        humans = [...humans, doc.data()];
+    let misc = [];
+    miscSnapshot.docs.forEach((doc, index) => {
+        misc = [...misc, doc.data()];
     });
     let advice = [];
     adviceSnapshot.docs.forEach((doc, index) => {
@@ -388,7 +426,7 @@ export const getStaticProps = async (context) => {
     return {
         props: {
             allPublications,
-            humans,
+            misc,
             advice,
             craigslist,
             opinions,

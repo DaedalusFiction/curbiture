@@ -38,8 +38,8 @@ const header = {
 
 const galleryCategories = [
     {
-        name: "humans",
-        href: "/publications/humans",
+        name: "misc",
+        href: "/publications/misc",
         image: {
             url: "/images/placeholder.webp",
             alt: "alt gallery image text",
@@ -47,7 +47,7 @@ const galleryCategories = [
         subCategories: [
             {
                 name: "downtown",
-                href: "/publications/humans/downtown",
+                href: "/publications/misc/downtown",
                 image: {
                     url: "/images/placeholder.webp",
                     alt: "alt gallery image text",
@@ -183,24 +183,24 @@ const leadProfile = {
 
 const secondaryProfiles = [
     {
-        image: { url: "/images/jamesBio.webp", alt: "Editor Owen Cash" },
-        name: "Owen cash",
+        image: {
+            url: "/images/chandler.webp",
+            alt: "Editor Sandy Beaches",
+        },
+        name: "Sandy Beaches",
+        content: "Bruce is the greatest.",
+    },
+    {
+        image: { url: "/images/davidBio.webp", alt: "Editor Owen Cash" },
+        name: "Owen Cash",
         content: "Owen likes to PARTY!",
     },
     {
         image: {
-            url: "/images/davidBio.webp",
-            alt: "Editor Bruce Peterson",
+            url: "/images/jamesBio.webp",
+            alt: "Kithis the Salient",
         },
-        name: "Bruce Peterson",
-        content: "Bruce is the greatest.",
-    },
-    {
-        image: {
-            url: "/images/chandler.webp",
-            alt: "Editor The Mutant",
-        },
-        name: "The Mutant",
+        name: "Kithis the Salient",
         content:
             "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam eaque nihil ipsum molestias ab quod aliquid consectetur rerum facilis ratione dignissimos fugiat, enim doloribus assumenda.\n\nLaboriosam voluptatem laudantium sequi iste nihil cupiditate sed, corporis eum natus excepturi, inventore nulla unde! Veritatis nihil culpa neque. Dolore ipsa sed asperiores voluptatibus nam modi. Dolorem hic incidunt quae tenetur quaerat animi, unde aspernatur.",
     },

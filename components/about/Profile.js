@@ -1,12 +1,12 @@
 import { Divider, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
-import SizedImage from "../general/SizedImage";
+import ImageFadeIn from "../general/ImageFadeIn";
 
 const Profile = ({ profile, children }) => {
     return (
         <Box>
-            <SizedImage image={profile.image} height="25rem" width="100%" />
+            <ImageFadeIn src={profile.image.url} height={500} width={500} />
             <br />
             <Typography variant="h4" sx={{ textAlign: "center" }}>
                 {profile.name}

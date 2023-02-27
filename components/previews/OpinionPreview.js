@@ -50,7 +50,11 @@ const OpinionPreview = ({ opinion }) => {
                     })}
                 </Box>
 
-                <Typography className="link" variant="h4">
+                <Typography
+                    className="link"
+                    variant="h4"
+                    sx={{ marginBottom: ".5em" }}
+                >
                     <Link href={opinionHref}>{opinion.fields[0].value}</Link>
                 </Typography>
                 <Typography
