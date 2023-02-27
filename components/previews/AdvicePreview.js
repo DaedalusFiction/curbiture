@@ -21,22 +21,34 @@ const AdvicePreview = ({ item }) => {
                         );
                     })}
                 </Box>
-                <Typography
-                    variant="h4"
-                    className="link"
-                    sx={{ textTransform: "uppercase" }}
-                >
+                <Typography variant="h4" className="link">
                     <Link href={itemHref}>{item.fields[0].value}</Link>
                 </Typography>
-                <Typography
+                {/* <Typography
                     variant="body2"
                     sx={{ margin: ".25rem 0", fontSize: "1rem" }}
                 >
                     {item.fields[2].value}
-                </Typography>
-                <Typography className="link" variant="h6" component="p">
-                    By <Link href={authorHref}>{item.fields[1].value}</Link>
-                </Typography>
+                </Typography> */}
+                <Box>
+                    <Typography
+                        variant="h6"
+                        sx={{ display: "inline-block", marginRight: ".35em" }}
+                    >
+                        by
+                    </Typography>
+                    <Typography
+                        className="link"
+                        variant="h5"
+                        component="p"
+                        sx={{
+                            textTransform: "uppercase",
+                            display: "inline-block",
+                        }}
+                    >
+                        <Link href={authorHref}>{item.fields[1].value}</Link>
+                    </Typography>
+                </Box>
             </Box>
             <Divider variant="inset" sx={{ margin: "1rem 0 1.5rem 0" }} />
         </Box>

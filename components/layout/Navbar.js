@@ -199,9 +199,10 @@ const Navbar = () => {
                                                 transition: "300ms",
                                                 fontSize: titleFontSize,
                                                 fontFamily: "Birch",
-                                                letterSpacing: ".15em",
+                                                letterSpacing: ".3em",
                                                 textAlign: "center",
                                                 cursor: "pointer",
+                                                textTransform: "uppercase",
                                                 color:
                                                     currentPage === ""
                                                         ? theme.palette

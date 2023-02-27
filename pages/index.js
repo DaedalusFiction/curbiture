@@ -20,11 +20,12 @@ import OpinionsPreview from "../components/previews/OpinionPreview";
 import HumanPreview from "../components/previews/HumanPreview";
 import CraigslistPreview from "../components/previews/CragislistPreview";
 import OpinionPreview from "../components/previews/OpinionPreview";
+import theme from "../styles/themes/theme";
 
 const SidebarInfo = () => {
     return (
         <Box sx={{ marginBottom: "2.75rem" }}>
-            <Typography variant="h5" sx={{ textAlign: "center" }}>
+            <Typography variant="h3" sx={{ textAlign: "center" }}>
                 About Us
             </Typography>
             <Divider sx={{ margin: ".5rem 0 .5rem 0" }} />
@@ -99,14 +100,11 @@ export default function Home({
                     xs={12}
                     md={5.75}
                     sx={{
-                        display: {
-                            xs: "none",
-                            md: "flex",
-                            flexDirection: "column",
-                        },
+                        display: "flex",
+                        flexDirection: "column",
                     }}
                 >
-                    <Typography variant="h5" sx={{ textAlign: "center" }}>
+                    <Typography variant="h3" sx={{ textAlign: "center" }}>
                         Humans (?) of Charlottesville
                     </Typography>
                     <Divider sx={{ margin: ".5rem 0 1rem 0" }} />
@@ -120,11 +118,8 @@ export default function Home({
                     xs={12}
                     md={0.25}
                     sx={{
-                        display: {
-                            xs: "none",
-                            md: "flex",
-                            flexDirection: "column",
-                        },
+                        display: "flex",
+                        flexDirection: "column",
                     }}
                 >
                     <Box
@@ -143,14 +138,11 @@ export default function Home({
                     xs={12}
                     md={2.875}
                     sx={{
-                        display: {
-                            xs: "none",
-                            md: "flex",
-                            flexDirection: "column",
-                        },
+                        display: "flex",
+                        flexDirection: "column",
                     }}
                 >
-                    <Typography variant="h5">Damn Good Advice</Typography>
+                    <Typography variant="h3">Damn Good Advice</Typography>
                     <Divider sx={{ margin: ".5rem 0 1rem 0" }} />
                     {advice &&
                         advice.map((advision, index) => {
@@ -168,11 +160,8 @@ export default function Home({
                     xs={12}
                     md={0.25}
                     sx={{
-                        display: {
-                            xs: "none",
-                            md: "flex",
-                            flexDirection: "column",
-                        },
+                        display: "flex",
+                        flexDirection: "column",
                     }}
                 >
                     <Box
@@ -191,14 +180,12 @@ export default function Home({
                     xs={12}
                     md={2.875}
                     sx={{
-                        display: {
-                            xs: "none",
-                            md: "flex",
-                            flexDirection: "column",
-                        },
+                        display: "flex",
+
+                        flexDirection: "column",
                     }}
                 >
-                    <Typography variant="h5">Opinions</Typography>
+                    <Typography variant="h3">Opinions</Typography>
                     <Divider sx={{ margin: ".5rem 0 1rem 0" }} />
                     {opinions &&
                         opinions.map((opinion, index) => {
@@ -234,7 +221,36 @@ export default function Home({
                         <Divider orientation="vertical" />
                     </Box>
                 </Grid> */}
+                <Grid item xs={12}>
+                    <Box
+                        className="section"
+                        sx={{
+                            backgroundColor: theme.palette.background.accent,
+                            marginBottom: "1rem",
+                        }}
+                    >
+                        <Typography
+                            variant="h2"
+                            sx={{ textAlign: "center", marginBottom: ".5em" }}
+                        >
+                            Want to support Curbiture?
+                        </Typography>
+                        <Typography
+                            variant="h6"
+                            sx={{
+                                textAlign: "center",
+                                fontStyle: "italic",
+                                color: theme.palette.custom.darkMuted,
+                                margin: "0 2rem",
+                            }}
+                        >
+                            Well that&rsquo;s too bad because we don&rsquo;t
+                            want your fucking blood money.
+                        </Typography>
+                    </Box>
+                </Grid>
                 <Grid
+                    className="section"
                     item
                     xs={12}
                     sx={{
@@ -254,10 +270,9 @@ export default function Home({
                             },
                         }}
                     >
-                        <Typography variant="h3" sx={{ textAlign: "center" }}>
+                        <Typography variant="h3" sx={{ marginBottom: ".5em" }}>
                             The Very Very Best of Craigslist
                         </Typography>
-                        <Divider sx={{ margin: ".5rem 0 1rem 0" }} />
                         <Grid container spacing={4}>
                             {craigslist &&
                                 craigslist.map((listing, index) => {

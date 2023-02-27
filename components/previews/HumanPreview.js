@@ -50,11 +50,7 @@ const HumanPreview = ({ human }) => {
                     })}
                 </Box>
 
-                <Typography
-                    className="link"
-                    variant="h4"
-                    sx={{ textTransform: "uppercase" }}
-                >
+                <Typography className="link" variant="h4">
                     <Link href={humanHref}>{human.fields[0].value}</Link>
                 </Typography>
                 <Typography
@@ -63,9 +59,25 @@ const HumanPreview = ({ human }) => {
                 >
                     {human.fields[2].value}
                 </Typography>
-                <Typography className="link" variant="h6" component="p">
-                    By <Link href={authorHref}>{human.fields[1].value}</Link>
-                </Typography>
+                <Box>
+                    <Typography
+                        variant="h6"
+                        sx={{ display: "inline-block", marginRight: ".5em" }}
+                    >
+                        by
+                    </Typography>
+                    <Typography
+                        className="link"
+                        variant="h5"
+                        component="p"
+                        sx={{
+                            textTransform: "uppercase",
+                            display: "inline-block",
+                        }}
+                    >
+                        <Link href={authorHref}>{human.fields[1].value}</Link>
+                    </Typography>
+                </Box>
             </Box>
         </Box>
     );

@@ -46,7 +46,7 @@ theme = createTheme(theme, {
     typography: {
         h1: {
             // fontFamily: "Raleway",
-            fontFamily: "Playfair Display",
+            fontFamily: "EB Garamond",
             color: theme.palette.custom.primary,
             // color: theme.palette.primary.off,
             fontWeight: "400",
@@ -56,7 +56,7 @@ theme = createTheme(theme, {
         },
         h2: {
             color: theme.palette.custom.primary,
-            fontFamily: "Playfair Display",
+            fontFamily: "EB Garamond",
             fontWeight: "400",
             // color: darkTheme.palette.custom.dark,
             fontSize: "clamp(3rem, 4vw, 10rem)",
@@ -64,30 +64,31 @@ theme = createTheme(theme, {
         },
         h3: {
             color: theme.palette.custom.primary,
-            fontFamily: "Playfair Display",
+            fontFamily: "EB Garamond",
             letterSpacing: ".025em",
             fontWeight: "400",
-            // color: darkTheme.palette.custom.dark,
+            fontSize: "2rem",
+            textAlign: "center",
         },
         h4: {
             color: theme.palette.custom.primary,
-            fontFamily: "Playfair Display",
-            letterSpacing: ".025em",
-            fontSize: "1.65rem",
+            fontFamily: "EB Garamond",
+            fontSize: "1.75rem",
             fontWeight: "600",
-            marginBottom: ".5em",
             // color: darkTheme.palette.custom.dark,
         },
         h5: {
             // color: theme.palette.custom.primary,
-            fontFamily: "Playfair Display",
+            fontFamily: "EB Garamond",
             fontSize: "1.25rem",
             fontWeight: "600",
             // color: darkTheme.palette.custom.dark,
         },
         h6: {
             fontWeight: "500",
-            fontSize: "1rem",
+            fontSize: "1.25rem",
+            fontFamily: "EB Garamond Italic",
+            // fontFamily: "EB Garamond",
         },
 
         subtitle1: {

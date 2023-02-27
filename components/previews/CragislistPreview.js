@@ -50,7 +50,7 @@ const CraigslistPreview = ({ item }) => {
                 <Typography
                     className="link"
                     variant="h4"
-                    sx={{ textTransform: "uppercase", textAlign: "center" }}
+                    sx={{ textAlign: "center" }}
                 >
                     <Link href={itemHref}>{item.fields[0].value}</Link>
                 </Typography>
@@ -64,14 +64,32 @@ const CraigslistPreview = ({ item }) => {
                 >
                     {item.fields[2].value}
                 </Typography>
-                <Typography
-                    className="link"
-                    variant="h6"
-                    component="p"
-                    sx={{ textAlign: "center" }}
-                >
-                    By <Link href={authorHref}>{item.fields[1].value}</Link>
-                </Typography>
+                <Box sx={{ display: "flex", justifyContent: "center" }}>
+                    <Box>
+                        <Typography
+                            variant="h6"
+                            sx={{
+                                display: "inline-block",
+                                marginRight: ".35em",
+                            }}
+                        >
+                            by
+                        </Typography>
+                        <Typography
+                            className="link"
+                            variant="h5"
+                            component="p"
+                            sx={{
+                                textTransform: "uppercase",
+                                display: "inline-block",
+                            }}
+                        >
+                            <Link href={authorHref}>
+                                {item.fields[1].value}
+                            </Link>
+                        </Typography>
+                    </Box>
+                </Box>
             </Box>
         </Box>
     );
