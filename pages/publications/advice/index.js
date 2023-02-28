@@ -3,7 +3,7 @@ import { Box, Container } from "@mui/system";
 import { collection, getDocs, orderBy, query, where } from "firebase/firestore";
 import React from "react";
 import PageLayout from "../../../components/layout/PageLayout";
-import AdvicePreview from "../../../components/previews/advicePreview";
+import AdvicePreview from "../../../components/previews/AdvicePreview";
 import { db } from "../../../firebase";
 
 const index = ({ advice }) => {
