@@ -6,7 +6,7 @@ import SizedImage from "../../components/general/SizedImage";
 import ImageFadeIn from "../general/ImageFadeIn";
 
 const CraigslistPreview = ({ item }) => {
-    const itemHref = "/publications/" + item.fields[0].value;
+    const itemHref = "/publications/craigslist/" + item.fields[0].value;
     const authorHref = "/contributors/" + item.fields[1].value;
 
     return (

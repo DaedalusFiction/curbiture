@@ -9,30 +9,27 @@ import {
     query,
     where,
 } from "firebase/firestore";
-import Image from "next/image";
-import React, { useState } from "react";
-import PageLayout from "../../../components/layout/PageLayout";
 import NativeImage from "../../../components/general/NativeImage";
 import { db } from "../../../firebase";
 import { Typography } from "@mui/material";
 import PublicationBody from "../../../components/publications/PublicationBody";
 import Link from "next/link";
 
-const page = ({ articles, poem }) => {
+const page = ({ articles, misc }) => {
     return (
         <Box>
             <Container maxWidth="xl" disableGutters>
                 <Box>
                     <NativeImage
                         maxSize={3000}
-                        image={{ url: poem.URLs[0], alt: "poem" }}
+                        image={{ url: misc.URLs[0], alt: "article" }}
                     />
                 </Box>
             </Container>
             <Container>
                 <Box sx={{ display: "flex", justifyContent: "end" }}>
                     <Typography variant="caption">
-                        {poem.fields[4].value}
+                        {misc.fields[4].value}
                     </Typography>
                 </Box>
                 <Box sx={{ padding: "3rem 0" }}>
@@ -43,7 +40,7 @@ const page = ({ articles, poem }) => {
                             justifyContent: "center",
                         }}
                     >
-                        {poem.subCategories.map((subCategory, index) => {
+                        {misc.subCategories.map((subCategory, index) => {
                             return (
                                 <Typography key={index} variant="caption">
                                     [{subCategory}]
@@ -55,7 +52,7 @@ const page = ({ articles, poem }) => {
                         sx={{ textAlign: "center", margin: ".25em 0" }}
                         variant="h1"
                     >
-                        {poem.fields[0].value}
+                        {misc.fields[0].value}?
                     </Typography>
                     <Typography sx={{ textAlign: "center" }}>by</Typography>
                     <Typography
@@ -68,14 +65,14 @@ const page = ({ articles, poem }) => {
                         }}
                         variant="h4"
                     >
-                        <Link href={`/contributors/${poem.fields[1].value}`}>
-                            {poem.fields[1].value}
+                        <Link href={`/contributors/${misc.fields[1].value}`}>
+                            {misc.fields[1].value}
                         </Link>
                     </Typography>
                     <PublicationBody
-                        sidebarCategory="poetry"
+                        sidebarCategory="articles"
                         sidebarItems={articles}
-                        story={poem}
+                        story={misc}
                     />
                 </Box>
             </Container>
@@ -85,12 +82,12 @@ const page = ({ articles, poem }) => {
 
 export const getServerSideProps = async (context) => {
     const docSnap = await getDoc(doc(db, `publications/${context.params.id}`));
-    let poem = docSnap.data();
+    let misc = docSnap.data();
 
     const publicationsRef = collection(db, "publications");
     const articlesQuery = query(
         publicationsRef,
-        where("categories", "array-contains", "poetry"),
+        where("categories", "array-contains", "advice"),
         orderBy("dateUploaded", "desc"),
         limit(3)
     );
@@ -105,7 +102,7 @@ export const getServerSideProps = async (context) => {
     return {
         props: {
             articles,
-            poem,
+            misc,
         },
     };
 };

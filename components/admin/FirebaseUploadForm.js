@@ -116,12 +116,10 @@ const FirebaseUploadForm = ({
                 const task = await getDownloadURL(storageRef).then(
                     (res) => {
                         //file already exists
-                        console.log("exists");
                         error = true;
                     },
                     (res) => {
                         //file doesn't exist
-                        console.log("doesn't exist");
                     }
                 );
             })
@@ -131,12 +129,10 @@ const FirebaseUploadForm = ({
         const markdownTask = await getDownloadURL(markdownStorageRef).then(
             (res) => {
                 //file already exists
-                console.log("exists");
                 error = true;
             },
             (res) => {
                 //file doesn't exist
-                console.log("doesn't exist");
             }
         );
 
@@ -203,7 +199,6 @@ const FirebaseUploadForm = ({
                             },
                             (error) => {
                                 // setUploadError(true);
-                                console.log(error.message);
                             },
                             () => {
                                 // creates firestore database entry

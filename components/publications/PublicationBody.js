@@ -23,7 +23,6 @@ const PublicationBody = ({ sidebarItems, story, sidebarCategory }) => {
                 xhr.send();
             } else {
                 // doc.data() will be undefined in this case
-                console.log("No such document!");
             }
         }
         getStory();

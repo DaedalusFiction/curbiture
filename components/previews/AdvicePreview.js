@@ -26,7 +26,7 @@ const AdvicePreview = ({ item }) => {
                     className="link"
                     sx={{ marginBottom: ".5em" }}
                 >
-                    <Link href={itemHref}>{item.fields[0].value}</Link>
+                    <Link href={itemHref}>{`${item.fields[0].value}?`}</Link>
                 </Typography>
                 {/* <Typography
                     variant="body2"
