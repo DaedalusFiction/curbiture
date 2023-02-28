@@ -29,26 +29,29 @@ const SidebarInfo = () => {
             </Typography>
             <Divider sx={{ margin: ".5rem 0 .5rem 0" }} />
             <Typography variant="body2" sx={{ fontSize: "1rem" }}>
-                <span style={{ fontWeight: "700" }}>The Rumen</span> is a
-                collaboration between writers, poets, and artists from a variety
-                of demographics and backgrounds. Like the guts of an ungulate,
-                we want <span style={{ fontWeight: "700" }}>The Rumen</span> to
-                be a space for ideas and experiences to digest, ferment, and
-                transform.
+                CURBITURE is a literary journal that shows its title capitalized
+                or in all caps depending on the whims of its web developer, who
+                is also one of three major contributors. The web
+                developer/editor, Owen Cash, along with writer/editor Sandy
+                Beaches and writer/editor Kithis the Salient take great pride in
+                the quality and poignancy of their work as well as the fitness
+                of their slim toned figures.
             </Typography>
             <Typography
                 variant="body2"
                 sx={{ fontSize: "1rem", margin: ".5rem 0" }}
             >
-                We are especially interested in publishing contributors from
-                historically underrepresented people groups.
+                If you are an MFA student or undergrad, or aspiring career
+                writer, and you need something to put on your resume, please
+                contact Curbiture and we will put you on the masthead. You
+                don&rsquo;t even have to contribute or anything.
             </Typography>
             <Typography
                 variant="body2"
                 sx={{ fontSize: "1rem", fontWeight: "600" }}
             >
                 <span style={{ textDecoration: "underline" }}>
-                    <Link href="/about">About Us</Link>
+                    <Link href="/about">Learn More</Link>
                 </span>
             </Typography>
             <Box
@@ -137,7 +140,7 @@ export default function Home({
                     xs={12}
                     md={2.875}
                     sx={{
-                        display: "flex",
+                        display: { xs: "none", md: "flex" },
                         flexDirection: "column",
                     }}
                 >
@@ -266,11 +269,20 @@ export default function Home({
                                 xs: "none",
                                 md: "flex",
                                 flexDirection: "column",
+                                alignItems: "center",
                             },
                         }}
                     >
-                        <Typography variant="h3" sx={{ marginBottom: "2em" }}>
-                            The Very Very Best of Craigslist
+                        <Typography
+                            variant="h3"
+                            sx={{
+                                marginBottom: "1em",
+                                fontSize: "3rem",
+                                maxWidth: "30ch",
+                            }}
+                        >
+                            The Very Very Best of Charlottesville&rsquo;s
+                            Craigslist
                         </Typography>
                         <Grid container spacing={4}>
                             {craigslist &&
@@ -323,7 +335,7 @@ export default function Home({
                 className="section"
                 sx={{
                     background: theme.palette.background.accent,
-                    display: "flex",
+                    display: { xs: "none", md: "flex" },
                     justifyContent: "center",
                 }}
             >
