@@ -340,8 +340,8 @@ export default function Home({
                         contributors. The web developer/editor, Owen Cash, along
                         with writer/editor Sandy Beaches and writer/editor
                         Kithis the Salient take great pride in the quality and
-                        poignancy of their work and the fitness of their slim
-                        figures.
+                        poignancy of their work as well as the fitness of their
+                        slim toned figures.
                     </Typography>
                     <br />
                     <Typography

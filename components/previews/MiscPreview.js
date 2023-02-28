@@ -10,7 +10,7 @@ const MiscPreview = ({ misc }) => {
         setRatio(naturalWidth / naturalHeight);
         setIsLoaded(true);
     };
-    const miscHref = "/publications/miscs/" + misc.fields[0].value;
+    const miscHref = "/publications/misc/" + misc.fields[0].value;
     const authorHref = "/contributors/" + misc.fields[1].value;
 
     return (

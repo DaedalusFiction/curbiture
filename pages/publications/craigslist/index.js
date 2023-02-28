@@ -1,19 +1,21 @@
-import { Divider, Grid, Typography } from "@mui/material";
-import { Box, Container } from "@mui/system";
+import { Grid } from "@mui/material";
 import { collection, getDocs, orderBy, query, where } from "firebase/firestore";
 import React from "react";
-import StoryPreview from "../../../components/home/StoryPreview";
 import PageLayout from "../../../components/layout/PageLayout";
+import CraigslistPreview from "../../../components/previews/CragislistPreview";
 import { db } from "../../../firebase";
 
-const index = ({ fiction }) => {
+const index = ({ craigslist }) => {
     return (
-        <PageLayout name="Articles">
+        <PageLayout name="Best of Craigslist">
             <Grid className="section" container spacing={3}>
-                {fiction.map((story, index) => {
+                {craigslist.map((craigslist, index) => {
                     return (
                         <Grid key={index} item xs={12} sm={6} md={3}>
-                            <StoryPreview story={story} category="articles" />
+                            <CraigslistPreview
+                                item={craigslist}
+                                category="craigslist"
+                            />
                         </Grid>
                     );
                 })}
@@ -24,22 +26,22 @@ const index = ({ fiction }) => {
 
 export const getStaticProps = async (context) => {
     const publicationsRef = collection(db, "publications");
-    const fictionQuery = query(
+    const craigslistQuery = query(
         publicationsRef,
-        where("categories", "array-contains", "article"),
+        where("categories", "array-contains", "craigslist"),
         orderBy("dateUploaded", "desc")
     );
 
-    const fictionSnapshot = await getDocs(fictionQuery);
+    const craigslistSnapshot = await getDocs(craigslistQuery);
 
-    let fiction = [];
-    fictionSnapshot.docs.forEach((doc, index) => {
-        fiction = [...fiction, doc.data()];
+    let craigslist = [];
+    craigslistSnapshot.docs.forEach((doc, index) => {
+        craigslist = [...craigslist, doc.data()];
     });
 
     return {
         props: {
-            fiction,
+            craigslist,
         },
     };
 };

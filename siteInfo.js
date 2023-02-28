@@ -294,18 +294,18 @@ const imageSubmissionsConfig = {
 
 const pages = [
     {
-        name: "humans",
-        href: "/publications/humans",
+        name: "misc",
+        href: "/publications/misc",
         subPages: [],
     },
     {
-        name: "Craigslist",
+        name: "craigslist",
         href: "/publications/craigslist",
         subPages: [],
     },
     {
         name: "opinions",
-        href: "/publications/articles",
+        href: "/publications/opinions",
         subPages: [],
     },
     {

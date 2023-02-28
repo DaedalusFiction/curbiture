@@ -2,18 +2,18 @@ import { Divider, Grid, Typography } from "@mui/material";
 import { Box, Container } from "@mui/system";
 import { collection, getDocs, orderBy, query, where } from "firebase/firestore";
 import React from "react";
-import StoryPreview from "../../../components/home/StoryPreview";
 import PageLayout from "../../../components/layout/PageLayout";
+import OpinionPreview from "../../../components/previews/opinionPreview";
 import { db } from "../../../firebase";
 
-const index = ({ fiction }) => {
+const index = ({ opinion }) => {
     return (
-        <PageLayout name="Fiction">
+        <PageLayout name="Opinions and Editorials">
             <Grid className="section" container spacing={3}>
-                {fiction.map((story, index) => {
+                {opinion.map((item, index) => {
                     return (
                         <Grid key={index} item xs={12} sm={6} md={3}>
-                            <StoryPreview story={story} category="fiction" />
+                            <OpinionPreview opinion={item} category="opinion" />
                         </Grid>
                     );
                 })}
@@ -24,22 +24,22 @@ const index = ({ fiction }) => {
 
 export const getStaticProps = async (context) => {
     const publicationsRef = collection(db, "publications");
-    const fictionQuery = query(
+    const opinionQuery = query(
         publicationsRef,
-        where("categories", "array-contains", "fiction"),
+        where("categories", "array-contains", "opinions"),
         orderBy("dateUploaded", "desc")
     );
 
-    const fictionSnapshot = await getDocs(fictionQuery);
+    const opinionSnapshot = await getDocs(opinionQuery);
 
-    let fiction = [];
-    fictionSnapshot.docs.forEach((doc, index) => {
-        fiction = [...fiction, doc.data()];
+    let opinion = [];
+    opinionSnapshot.docs.forEach((doc, index) => {
+        opinion = [...opinion, doc.data()];
     });
 
     return {
         props: {
-            fiction,
+            opinion,
         },
     };
 };

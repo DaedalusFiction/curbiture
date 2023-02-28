@@ -1,4 +1,4 @@
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Container, Grid, Typography } from "@mui/material";
 import SizedImage from "../../../components/general/SizedImage";
 import { studioContent } from "../../../siteInfo";
 import PageLayout from "../../../components/layout/PageLayout";
@@ -8,45 +8,27 @@ const index = () => {
     return (
         <PageLayout name="MISSION STATEMENT">
             <AboutNavbar />
-            <Box className="section">
-                <Grid container spacing={6}>
-                    <Grid item xs={12} md={6}>
-                        <Typography variant="h3">
-                            {studioContent.header}
-                        </Typography>
-                        <br />
-                        <Typography sx={{ whiteSpace: "pre-wrap" }}>
-                            The Rumen is mostly committed to publishing the
-                            highest-quality poetry, fiction, creative
-                            nonfiction, and art by all peoples, especially
-                            individuals from historically underrepresented
-                            demographics. We believe that art is a vehicle for
-                            inter- and intrapersonal connection, and we are
-                            especially interested in work that effectively
-                            describes what it means to be human, in an
-                            intellectual, emotional, bodily, and/or communal
-                            way.
-                        </Typography>
-                    </Grid>
-                    <Grid item xs={12} md={6}>
-                        <SizedImage
-                            height="30rem"
-                            width="100%"
-                            image={studioContent.imageOne}
-                        />
-                        <Box
-                            sx={{
-                                display: "flex",
-                                justifyContent: { xs: "start", md: "end" },
-                            }}
-                        >
-                            <Typography variant="caption">
-                                {studioContent.imageOne.alt}
+            <Container maxWidth="md">
+                <Box className="section">
+                    <Grid container spacing={6}>
+                        <Grid item xs={12}>
+                            <Typography sx={{ whiteSpace: "pre-wrap" }}>
+                                CURBITURE is on a mission to make you laugh.
+                                Whether you like clowns, happy dogs, laughing
+                                babies, slapstick, farts at inappropriate times
+                                and places, Minions, caricatures, or practical
+                                jokes, Curbiture has exactly what you need to
+                                make the pain go away, at least temporarily.
                             </Typography>
-                        </Box>
+                            <br />
+                            <Typography sx={{ whiteSpace: "pre-wrap" }}>
+                                We are also on a mission to change the world.
+                                More on that later.
+                            </Typography>
+                        </Grid>
                     </Grid>
-                </Grid>
-            </Box>
+                </Box>
+            </Container>
         </PageLayout>
     );
 };

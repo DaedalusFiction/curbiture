@@ -198,7 +198,6 @@ const Navbar = () => {
                                                 margin: "0",
                                                 transition: "300ms",
                                                 fontSize: titleFontSize,
-                                                fontFamily: "Birch",
                                                 letterSpacing: ".3em",
                                                 textAlign: "center",
                                                 cursor: "pointer",

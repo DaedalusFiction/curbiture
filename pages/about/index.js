@@ -9,48 +9,36 @@ const index = () => {
     return (
         <PageLayout name="ABOUT US">
             <AboutNavbar />
-            <Box className="section">
-                <Grid container spacing={6}>
-                    <Grid item xs={12} md={6}>
-                        <SizedImage
-                            height="30rem"
-                            width="100%"
-                            image={aboutContent.image}
-                        />
-                        <Typography variant="caption">
-                            {aboutContent.image.alt}
-                        </Typography>
+            <Container maxWidth="md">
+                <Box className="section">
+                    <Grid container>
+                        <Grid item xs={12}>
+                            <Typography>
+                                CURBITURE was formed as a venue for the editors
+                                and their friends to publish stupid shit
+                                whenever they want. Over the weeks we have
+                                collaborated with less than a dozen local
+                                artists, writers, poets, and journalists, but we
+                                expect this number to go up.
+                            </Typography>
+                            <br />
+                            <Typography>
+                                It&rsquo;s hard to say what makes Curbiture
+                                unique, at least in a way that doesn&rsquo;t
+                                sound cliche or disingenuine. We publish all the
+                                same old humor categories, and we even borrowed
+                                the layout and fonts from other major
+                                publication. The color scheme is technically
+                                probably unique, though, and we do generate our
+                                own content. But the whole thing does just feel
+                                done before.
+                            </Typography>
+                            <br />
+                            <Typography></Typography>
+                        </Grid>
                     </Grid>
-                    <Grid item xs={12} md={6}>
-                        <Typography variant="h3">Our Roots</Typography>
-                        <br />
-                        <Typography>
-                            The Rumen is a collaboration between writers, poets,
-                            and artists from a variety of demographics and
-                            backgrounds. Like the guts of an ungulate, we want
-                            The Rumen to be a space for ideas and experiences to
-                            digest, ferment, and transform. We are especially
-                            interested in publishing contributors from
-                            historically underrepresented people groups.
-                        </Typography>
-                        <br />
-                        <Typography>
-                            Our editors bring their own expertise from artistic,
-                            scientific, and technical fields. No discipline
-                            exists in isolation, and we believe that in The
-                            Rumen the ripples of these intersections can gather,
-                            collapse, and mutate into some greater, more
-                            meaningful summation.
-                        </Typography>
-                        <br />
-                        <Typography>
-                            The Rumen was founded in 2022 by Dave Sorensen,
-                            James Cole, and Chandler McGraw, but made possible
-                            through the work of artists from across the globe.
-                        </Typography>
-                    </Grid>
-                </Grid>
-            </Box>
+                </Box>
+            </Container>
         </PageLayout>
     );
 };
