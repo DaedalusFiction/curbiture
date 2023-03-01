@@ -313,11 +313,11 @@ const pages = [
         href: "/publications/advice",
         subPages: [],
     },
-    {
-        name: "contributors",
-        href: "/contributors",
-        subPages: [],
-    },
+    // {
+    //     name: "contributors",
+    //     href: "/contributors",
+    //     subPages: [],
+    // },
     {
         name: "about",
         href: "/about",

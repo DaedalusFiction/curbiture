@@ -10,7 +10,6 @@ import {
     query,
     where,
 } from "firebase/firestore";
-import StoryPreview from "../components/home/StoryPreview";
 import { db } from "../firebase";
 import Meta from "../components/home/Meta";
 import Link from "next/link";
@@ -28,6 +27,15 @@ const SidebarInfo = () => {
                 About Us
             </Typography>
             <Divider sx={{ margin: ".5rem 0 .5rem 0" }} />
+            <Box
+                sx={{
+                    height: "20rem",
+                    background:
+                        "linear-gradient(rgba(250, 90, 95, 0), rgba(250, 90, 95, 0)), url(/images/curbnotefiltered.webp)",
+                    backgroundSize: "cover",
+                    marginBottom: "1rem",
+                }}
+            ></Box>
 
             <Typography
                 variant="body1"
@@ -41,10 +49,9 @@ const SidebarInfo = () => {
                 variant="body1"
                 sx={{ fontSize: "1rem", margin: ".5rem 0" }}
             >
-                If you are an MFA student or undergrad, or aspiring career
-                writer, and you need something to put on your resume, please
-                contact Curbiture and we will put you on the masthead. You
-                don&rsquo;t even have to contribute or anything.
+                In addition to posting articles and advice, our journalists and
+                editorial team collaborate with local contributors. We are not
+                affiliated with UVA, Craigslist, or any political party.
             </Typography>
             <Typography
                 variant="body1"
