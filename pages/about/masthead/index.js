@@ -15,14 +15,16 @@ const index = () => {
                     <Grid item key={index} xs={12} md={4}>
                         <Profile profile={secondaryProfiles[0]}>
                             <Typography>
-                                Sandy loves soap operas, most perfumes,
+                                Buff Bec loves soap operas, most small animals,
                                 Totino&rsquo;s pizza rolls, Bernie Sanders, and
                                 weed.
                             </Typography>
                             <br />
                             <Typography>
                                 Her works have appeared in too many publications
-                                to list here
+                                to list here. Oh, and if you see her
+                                walkin&rsquo; your way, you best cross to the
+                                other side of the street.
                             </Typography>
                         </Profile>
                     </Grid>

@@ -6,7 +6,7 @@ import ImageFadeIn from "../general/ImageFadeIn";
 const Profile = ({ profile, children }) => {
     return (
         <Box>
-            <ImageFadeIn src={profile.image.url} height={500} width={500} />
+            <ImageFadeIn src={profile.image.url} height={650} width={500} />
             <br />
             <Typography variant="h4" sx={{ textAlign: "center" }}>
                 {profile.name}

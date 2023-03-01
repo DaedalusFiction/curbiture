@@ -184,8 +184,8 @@ const leadProfile = {
 const secondaryProfiles = [
     {
         image: {
-            url: "/images/chandler.webp",
-            alt: "Editor Sandy Beaches",
+            url: "/images/buffBec.webp",
+            alt: "Buff Bec",
         },
         name: "Sandy Beaches",
         content: "Bruce is the greatest.",

@@ -341,6 +341,12 @@ export default function Home({
             >
                 <Box sx={{ maxWidth: "70ch" }}>
                     <Typography
+                        variant="h2"
+                        sx={{ textAlign: "center", marginBottom: ".5em" }}
+                    >
+                        About Curbiture
+                    </Typography>
+                    <Typography
                         sx={{
                             textAlign: "center",
                             margin: "0 2rem",
