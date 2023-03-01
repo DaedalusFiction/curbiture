@@ -187,7 +187,7 @@ const secondaryProfiles = [
             url: "/images/buffBec.webp",
             alt: "Buff Bec",
         },
-        name: "Sandy Beaches",
+        name: "Buff Bec",
         content: "Bruce is the greatest.",
     },
     {
