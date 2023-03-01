@@ -58,7 +58,7 @@ const MiscPreview = ({ misc }) => {
                     <Link href={miscHref}>{misc.fields[0].value}</Link>
                 </Typography>
                 <Typography
-                    variant="body2"
+                    variant="body1"
                     sx={{ margin: ".25rem 0", fontSize: "1rem" }}
                 >
                     {misc.fields[2].value}

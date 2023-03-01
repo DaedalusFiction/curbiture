@@ -13,17 +13,8 @@ const index = () => {
                     <Grid container spacing={6}>
                         <Grid item xs={12}>
                             <Typography sx={{ whiteSpace: "pre-wrap" }}>
-                                CURBITURE is on a mission to make you laugh.
-                                Whether you like clowns, happy dogs, laughing
-                                babies, slapstick, farts at inappropriate times
-                                and places, Minions, caricatures, or practical
-                                jokes, Curbiture has exactly what you need to
-                                make the pain go away, at least temporarily.
-                            </Typography>
-                            <br />
-                            <Typography sx={{ whiteSpace: "pre-wrap" }}>
-                                We are also on a mission to change the world.
-                                More on that later.
+                                We are on a mission to change the world. More on
+                                that later.
                             </Typography>
                         </Grid>
                     </Grid>

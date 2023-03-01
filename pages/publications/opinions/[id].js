@@ -74,7 +74,7 @@ const Page = ({ articles, story }) => {
                         </Link>
                     </Typography>
                     <PublicationBody
-                        sidebarCategory="fiction"
+                        sidebarCategory="Miscellany"
                         sidebarItems={articles}
                         story={story}
                     />
@@ -91,7 +91,7 @@ export const getServerSideProps = async (context) => {
     const publicationsRef = collection(db, "publications");
     const articlesQuery = query(
         publicationsRef,
-        where("categories", "array-contains", "fiction"),
+        where("categories", "array-contains", "misc"),
         orderBy("dateUploaded", "desc"),
         limit(3)
     );

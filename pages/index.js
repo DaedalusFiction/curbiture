@@ -28,15 +28,7 @@ const SidebarInfo = () => {
                 About Us
             </Typography>
             <Divider sx={{ margin: ".5rem 0 .5rem 0" }} />
-            <Typography variant="body2" sx={{ fontSize: "1rem" }}>
-                CURBITURE is a literary journal that shows its title capitalized
-                or in all caps depending on the whims of its web developer, who
-                is also one of three major contributors. The web
-                developer/editor, Owen Cash, along with writer/editor Sandy
-                Beaches and writer/editor Kithis the Salient take great pride in
-                the quality and poignancy of their work as well as the fitness
-                of their slim toned figures.
-            </Typography>
+
             <Typography
                 variant="body2"
                 sx={{ fontSize: "1rem", margin: ".5rem 0" }}
@@ -238,11 +230,10 @@ export default function Home({
                             Want to support Curbiture?
                         </Typography>
                         <Typography
-                            variant="h6"
+                            variant="body2"
                             sx={{
                                 textAlign: "center",
                                 fontStyle: "italic",
-                                color: theme.palette.custom.darkMuted,
                                 margin: "0 2rem",
                             }}
                         >
@@ -341,31 +332,11 @@ export default function Home({
             >
                 <Box sx={{ maxWidth: "70ch" }}>
                     <Typography
-                        variant="h2"
-                        sx={{ textAlign: "center", marginBottom: ".5em" }}
-                    >
-                        About Curbiture
-                    </Typography>
-                    <Typography
+                        variant="body2"
                         sx={{
                             textAlign: "center",
                             margin: "0 2rem",
-                        }}
-                    >
-                        CURBITURE is a literary journal that shows its title
-                        capitalized or in all caps depending on the whims of its
-                        web developer, who is also one of three major
-                        contributors. The web developer/editor, Owen Cash, along
-                        with writer/editor Sandy Beaches and writer/editor
-                        Kithis the Salient take great pride in the quality and
-                        poignancy of their work as well as the fitness of their
-                        slim toned figures.
-                    </Typography>
-                    <br />
-                    <Typography
-                        sx={{
-                            textAlign: "center",
-                            margin: "0 2rem",
+                            fontStyle: "italic",
                         }}
                     >
                         If you are an MFA student or undergrad, or aspiring

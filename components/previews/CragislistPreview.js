@@ -55,7 +55,7 @@ const CraigslistPreview = ({ item }) => {
                     <Link href={itemHref}>{item.fields[0].value}</Link>
                 </Typography>
                 <Typography
-                    variant="body2"
+                    variant="body1"
                     sx={{
                         margin: ".25rem 0",
                         fontSize: "1rem",

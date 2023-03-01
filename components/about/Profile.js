@@ -11,6 +11,7 @@ const Profile = ({ profile, children }) => {
             <Typography variant="h4" sx={{ textAlign: "center" }}>
                 {profile.name}
             </Typography>
+            <br />
             <Divider
                 sx={{
                     maxWidth: "10rem",

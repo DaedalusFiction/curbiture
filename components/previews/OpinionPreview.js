@@ -58,7 +58,7 @@ const OpinionPreview = ({ opinion }) => {
                     <Link href={opinionHref}>{opinion.fields[0].value}</Link>
                 </Typography>
                 <Typography
-                    variant="body2"
+                    variant="body1"
                     sx={{ margin: ".25rem 0", fontSize: "1rem" }}
                 >
                     {opinion.fields[2].value}

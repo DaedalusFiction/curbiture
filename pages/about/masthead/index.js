@@ -15,16 +15,10 @@ const index = () => {
                     <Grid item key={index} xs={12} md={4}>
                         <Profile profile={secondaryProfiles[0]}>
                             <Typography>
-                                Buff Bec loves soap operas, most small animals,
-                                Totino&rsquo;s pizza rolls, Bernie Sanders, and
-                                weed.
-                            </Typography>
-                            <br />
-                            <Typography>
-                                Her works have appeared in too many publications
-                                to list here. Oh, and if you see her
-                                walkin&rsquo; your way, you best cross to the
-                                other side of the street.
+                                Buff Bec grew up with The Rose, Atlas
+                                Underground, and crappy apartments on 5th st.
+                                extended. She is a supporter of The Bridge, Live
+                                Arts, and Cosaic.
                             </Typography>
                         </Profile>
                     </Grid>
@@ -38,14 +32,6 @@ const index = () => {
                                 eating soft cheese that he left out overnight,
                                 Owen doesn&rsquo;t let things like potential
                                 consequences get in the way of living his life.
-                            </Typography>
-                            <br />
-                            <Typography>
-                                Owen is very sure that the novels he plans to
-                                write will be instant best-sellers. If you would
-                                like to collaborate with him on one or more of
-                                them, please say so in the comment section of
-                                our contact form.
                             </Typography>
                         </Profile>
                     </Grid>

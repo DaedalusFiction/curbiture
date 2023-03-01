@@ -114,9 +114,8 @@ theme = createTheme(theme, {
             // fontFamily: darkTheme.typography.darkTheme.main,
         },
         body2: {
-            fontFamily: "Raleway",
-            fontWeight: "400",
-            fontSize: "1rem",
+            fontFamily: "EB Garamond Italic",
+            fontSize: "1.25rem",
             // lineHeight: "1.5rem",
             color: theme.palette.custom.dark,
             // fontFamily: darkTheme.typography.darkTheme.decorative,

@@ -81,7 +81,11 @@ const Navbar = () => {
                 display: { xs: "inherit", xl: "flex" },
             }}
         >
-            <AppBar position="static" onMouseLeave={handleMouseLeave}>
+            <AppBar
+                position="static"
+                onMouseLeave={handleMouseLeave}
+                style={{ background: theme.palette.custom.dark }}
+            >
                 <Container sx={{ padding: ".5rem 0" }} maxWidth="xl">
                     <Grid container>
                         <Grid item xs={3}>
@@ -161,8 +165,31 @@ const Navbar = () => {
                                         color: theme.palette.custom.light,
                                     }}
                                 >
-                                    <Link href="/" style={{ color: "inherit" }}>
-                                        {siteName}
+                                    <Link href="/">
+                                        <Typography
+                                            sx={{
+                                                margin: "0",
+                                                transition: "300ms",
+                                                fontSize: titleFontSize,
+                                                letterSpacing: ".1em",
+                                                fontFamily: "Anton",
+                                                textAlign: "center",
+                                                cursor: "pointer",
+                                                textTransform: "uppercase",
+                                                color: theme.palette.secondary
+                                                    .main,
+                                            }}
+                                        >
+                                            <span
+                                                style={{
+                                                    color: theme.palette.primary
+                                                        .main,
+                                                }}
+                                            >
+                                                CURB
+                                            </span>
+                                            ITURE
+                                        </Typography>
                                     </Link>
                                 </Typography>
                             </Box>
@@ -198,23 +225,24 @@ const Navbar = () => {
                                                 margin: "0",
                                                 transition: "300ms",
                                                 fontSize: titleFontSize,
-                                                letterSpacing: ".3em",
+                                                letterSpacing: ".1em",
+                                                fontFamily: "Anton",
                                                 textAlign: "center",
                                                 cursor: "pointer",
                                                 textTransform: "uppercase",
-                                                color:
-                                                    currentPage === ""
-                                                        ? theme.palette
-                                                              .secondary.main
-                                                        : theme.palette.custom
-                                                              .light,
-                                                "&:hover": {
-                                                    color: theme.palette.custom
-                                                        .light,
-                                                },
+                                                color: theme.palette.secondary
+                                                    .main,
                                             }}
                                         >
-                                            {siteName}
+                                            <span
+                                                style={{
+                                                    color: theme.palette.primary
+                                                        .main,
+                                                }}
+                                            >
+                                                CURB
+                                            </span>
+                                            ITURE
                                         </Typography>
                                     </Link>
                                 </Box>
