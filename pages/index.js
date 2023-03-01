@@ -19,6 +19,7 @@ import CraigslistPreview from "../components/previews/CragislistPreview";
 import OpinionPreview from "../components/previews/OpinionPreview";
 import theme from "../styles/themes/theme";
 import MiscPreview from "../components/previews/MiscPreview";
+import ImageFadeIn from "../components/general/ImageFadeIn";
 
 const SidebarInfo = () => {
     return (
@@ -27,15 +28,12 @@ const SidebarInfo = () => {
                 About Us
             </Typography>
             <Divider sx={{ margin: ".5rem 0 .5rem 0" }} />
-            <Box
-                sx={{
-                    height: "20rem",
-                    background:
-                        "linear-gradient(rgba(250, 90, 95, 0), rgba(250, 90, 95, 0)), url(/images/curbnotefiltered.webp)",
-                    backgroundSize: "cover",
-                    marginBottom: "1rem",
-                }}
-            ></Box>
+            <ImageFadeIn
+                src={"/images/curbnotefiltered2.webp"}
+                alt="craigslist ad"
+                height={400}
+                width={500}
+            />
 
             <Typography
                 variant="body1"
@@ -204,7 +202,7 @@ export default function Home({
                             </Box>
                         </Grid>
 
-                        <Grid item xs={12} md={4}>
+                        <Grid item xs={12} lg={4}>
                             <Box
                                 sx={{
                                     display: "flex",
@@ -262,7 +260,7 @@ export default function Home({
                                 </Box>
                             </Box>
                         </Grid>
-                        <Grid item xs={12} md={8}>
+                        <Grid item xs={12} lg={8}>
                             <Grid container>
                                 <Grid item xs={12}>
                                     <Typography
@@ -470,7 +468,7 @@ export const getStaticProps = async (context) => {
         where("categories", "array-contains", "opinions"),
 
         orderBy("dateUploaded", "desc"),
-        limit(4)
+        limit(2)
     );
 
     const allPublicationsSnapshot = await getDocs(allPublicationsQuery);

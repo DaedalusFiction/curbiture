@@ -78,7 +78,7 @@ const Navbar = () => {
                 position: "fixed",
                 top: "0",
                 zIndex: "100",
-                display: { xs: "inherit", xl: "flex" },
+                display: { xs: "inherit", lg: "flex" },
             }}
         >
             <AppBar
@@ -86,12 +86,12 @@ const Navbar = () => {
                 onMouseLeave={handleMouseLeave}
                 style={{ background: theme.palette.custom.dark }}
             >
-                <Container sx={{ padding: ".5rem 0" }} maxWidth="xl">
+                <Container sx={{ padding: ".5rem 0" }} maxWidth="lg">
                     <Grid container>
                         <Grid item xs={3}>
                             <Box
                                 sx={{
-                                    display: { xs: "flex", xl: "none" },
+                                    display: { xs: "flex", lg: "none" },
                                 }}
                             >
                                 <IconButton
@@ -119,7 +119,7 @@ const Navbar = () => {
                                     open={Boolean(anchorElNav)}
                                     onClose={handleCloseNavMenu}
                                     sx={{
-                                        display: { xs: "block", xl: "none" },
+                                        display: { xs: "block", lg: "none" },
                                     }}
                                 >
                                     {pages.map((page, index) => {
@@ -145,7 +145,7 @@ const Navbar = () => {
                         <Grid item xs={9}>
                             <Box
                                 sx={{
-                                    display: { xs: "flex", md: "none" },
+                                    display: { xs: "flex", lg: "none" },
                                     alignItems: "center",
                                     justifyContent: "end",
                                     paddingRight: "1em",
@@ -197,7 +197,7 @@ const Navbar = () => {
                     </Grid>
 
                     {/* desktop view */}
-                    <Box sx={{ display: { xs: "none", xl: "inherit" } }}>
+                    <Box sx={{ display: { xs: "none", lg: "inherit" } }}>
                         <Grid container>
                             <Grid item xs={4}>
                                 <Box
