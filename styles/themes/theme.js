@@ -68,7 +68,6 @@ theme = createTheme(theme, {
             letterSpacing: ".025em",
             fontWeight: "400",
             fontSize: "1rem",
-            textAlign: "center",
             textTransform: "uppercase",
         },
         h4: {
