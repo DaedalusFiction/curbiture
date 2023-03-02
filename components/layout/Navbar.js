@@ -86,7 +86,7 @@ const Navbar = () => {
                 onMouseLeave={handleMouseLeave}
                 style={{ background: theme.palette.custom.dark }}
             >
-                <Container sx={{ padding: ".5rem 0" }} maxWidth="lg">
+                <Container sx={{ padding: ".5rem 0" }} maxWidth="xl">
                     <Grid container>
                         <Grid item xs={3}>
                             <Box
