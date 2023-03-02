@@ -64,7 +64,7 @@ const CraigslistPreview = ({ item }) => {
                 >
                     {item.fields[2].value}
                 </Typography>
-                <Box sx={{ display: "flex", justifyContent: "center" }}>
+                {/* <Box sx={{ display: "flex", justifyContent: "center" }}>
                     <Box>
                         <Typography
                             variant="h6"
@@ -89,7 +89,7 @@ const CraigslistPreview = ({ item }) => {
                             </Link>
                         </Typography>
                     </Box>
-                </Box>
+                </Box> */}
             </Box>
         </Box>
     );

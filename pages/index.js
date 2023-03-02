@@ -268,9 +268,10 @@ export default function Home({
                                         sx={{
                                             textAlign: "center",
                                             margin: "1rem 0",
+                                            fontSize: "2rem",
                                         }}
                                     >
-                                        The Very Very Best of C&rsquo;ville
+                                        Buff Bec&rsquo;s Best of C&rsquo;ville
                                         Craigslist
                                     </Typography>
                                     <Divider
@@ -290,8 +291,8 @@ export default function Home({
                                                     sx={{
                                                         padding: "1rem",
                                                         display: "flex",
-                                                        justifyContent:
-                                                            "center",
+                                                        flexDirection: "column",
+                                                        alignItems: "center",
                                                     }}
                                                 >
                                                     <CraigslistPreview
@@ -303,6 +304,7 @@ export default function Home({
                                         );
                                     })}
                             </Grid>
+                            <Divider sx={{ margin: ".5rem 0 1rem 0" }} />
                         </Grid>
                     </Grid>
                 </Grid>
