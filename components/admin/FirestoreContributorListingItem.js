@@ -7,8 +7,6 @@ import { deleteDoc, doc, setDoc } from "firebase/firestore";
 import { useState } from "react";
 import ButtonWithConfirm from "../general/ButtonWithConfirm";
 import theme from "../../styles/themes/theme";
-import FirebaseCategorySelect from "./FirebaseCategorySelect";
-import { galleryCategories } from "../../siteInfo";
 
 const FirestoreListingItem = ({
     folder,

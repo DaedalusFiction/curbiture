@@ -8,7 +8,7 @@ import { useState } from "react";
 import ButtonWithConfirm from "../general/ButtonWithConfirm";
 import theme from "../../styles/themes/theme";
 import FirebaseCategorySelect from "./FirebaseCategorySelect";
-import { galleryCategories } from "../../siteInfo";
+import { uploadCategories } from "../../siteInfo";
 
 const FirestoreListingItem = ({
     folder,
@@ -109,11 +109,11 @@ const FirestoreListingItem = ({
                                 />
                             );
                         })}
-                    {image && folder === "gallery" && (
+                    {image && folder === "upload" && (
                         <FirebaseCategorySelect
                             formData={formData}
                             setFormData={setFormData}
-                            galleryCategories={galleryCategories}
+                            uploadCategories={uploadCategories}
                         />
                     )}
                     <Box

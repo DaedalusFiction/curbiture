@@ -17,7 +17,7 @@ const SocialMediaIcons = ({ fontSize, color }) => {
                     </IconButton>
                 </Tooltip>
             </Link>
-            <Link href="https://www.facebook.com/people/The-Rumen/100087383244583/">
+            <Link href="https://www.facebook.com/CurbitureCharlottesville/">
                 <Tooltip title="facebook">
                     <IconButton aria-label="facebook">
                         <FacebookIcon
@@ -27,7 +27,7 @@ const SocialMediaIcons = ({ fontSize, color }) => {
                     </IconButton>
                 </Tooltip>
             </Link>
-            <Link href="https://twitter.com/KithisThe">
+            <Link href="https://twitter.com/curbiturecville">
                 <Tooltip title="twitter">
                     <IconButton aria-label="twitter">
                         <TwitterIcon

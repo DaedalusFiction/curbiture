@@ -7,7 +7,7 @@ import React from "react";
 import { useRef } from "react";
 import { useState } from "react";
 import { db, storage } from "../../firebase";
-import { galleryCategories } from "../../siteInfo";
+import { uploadCategories } from "../../siteInfo";
 import theme from "../../styles/themes/theme";
 import ButtonWithConfirm from "../general/ButtonWithConfirm";
 import FirebaseCategorySelect from "./FirebaseCategorySelect";
@@ -373,7 +373,7 @@ const FirebaseUploadForm = ({
             <FirebaseCategorySelect
                 formData={formData}
                 setFormData={setFormData}
-                galleryCategories={galleryCategories}
+                uploadCategories={uploadCategories}
             />
 
             <ButtonWithConfirm

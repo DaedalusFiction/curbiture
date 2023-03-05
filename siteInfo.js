@@ -1,23 +1,4 @@
-// Table of Contents:
-// 1. Meta
-// 2. Layout
-// 3. Home
-// 4. Services
-// 5. Projects
-// 6. Studio
-// 7. About
-// 8. Social Media
-// 9. The Process
-// 10. Contact
-
-import lightTheme from "./styles/themes/theme";
-
-// 1. Meta
-
 const siteName = "Curbiture";
-// const siteName = "Cosima Hewes";
-
-// 2. Layout
 
 const navbar = {
     buttonOne: {
@@ -34,15 +15,14 @@ const header = {
         variant: "outlined",
     },
 };
-// 3. Home
 
-const galleryCategories = [
+const uploadCategories = [
     {
         name: "misc",
         href: "/publications/misc",
         image: {
             url: "/images/placeholder.webp",
-            alt: "alt gallery image text",
+            alt: "alt upload image text",
         },
         subCategories: [
             {
@@ -50,7 +30,7 @@ const galleryCategories = [
                 href: "/publications/misc/downtown",
                 image: {
                     url: "/images/placeholder.webp",
-                    alt: "alt gallery image text",
+                    alt: "alt upload image text",
                 },
             },
         ],
@@ -95,25 +75,25 @@ const galleryCategories = [
         ],
     },
     {
-        name: "craigslist",
-        href: "/publications/craigslist",
+        name: "bestof",
+        href: "/publications/bestof",
         image: { url: "/images/placeholder.webp", alt: "alt text" },
         subCategories: [
             {
                 name: "for sale",
-                href: "/publications/craigslist/for sale",
+                href: "/publications/bestof/for sale",
                 image: { url: "/images/placeholder.webp", alt: "alt text" },
             },
             {
                 name: "help wanted",
-                href: "/publications/craigslist/help wanted",
+                href: "/publications/bestof/help wanted",
                 image: { url: "/images/placeholder.webp", alt: "alt text" },
             },
         ],
     },
 ];
 
-const galleryConfig = {
+const uploadConfig = {
     categories: [],
     subCategories: [],
     fields: [
@@ -337,8 +317,8 @@ export {
     pages,
     navbar,
     header,
-    galleryCategories,
-    galleryConfig,
+    uploadCategories,
+    uploadConfig,
     subscribeConfig,
     contributorConfig,
     textSubmissionsConfig,

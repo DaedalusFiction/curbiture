@@ -7,7 +7,7 @@ import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../firebase.js";
 import FirebaseUploadForm from "../../components/admin/FirebaseUploadForm.js";
 import FirestoreListing from "../../components/admin/FirestoreListing.js";
-import { contributorConfig, galleryConfig } from "../../siteInfo";
+import { contributorConfig, uploadConfig } from "../../siteInfo";
 import PageLayout from "../../components/layout/PageLayout.js";
 import FirestoreSubmissionsListing from "../../components/admin/FirestoreSubmissionsListing.js";
 import FirestoreImageSubmissionsListing from "../../components/admin/FirestoreImageSubmissionsListing.js";
@@ -52,7 +52,7 @@ const Admin = () => {
                                 <Grid item xs={12}>
                                     <Container maxWidth="lg">
                                         <FirestoreSubmissionsListing
-                                            // category={galleryConfig.category}
+                                            // category={uploadConfig.category}
                                             folder="storysubmissions"
                                             updateCounter={updateCounter}
                                             setUpdateCounter={setUpdateCounter}
@@ -62,7 +62,7 @@ const Admin = () => {
                                 <Grid item xs={12}>
                                     <Container maxWidth="lg">
                                         <FirestoreImageSubmissionsListing
-                                            // category={galleryConfig.category}
+                                            // category={uploadConfig.category}
                                             folder="imagesubmissions"
                                             updateCounter={updateCounter}
                                             setUpdateCounter={setUpdateCounter}
@@ -71,7 +71,7 @@ const Admin = () => {
                                 </Grid>
                                 <Grid item xs={12} md={6}>
                                     <FirebaseUploadForm
-                                        config={galleryConfig}
+                                        config={uploadConfig}
                                         folder="publications"
                                         updateCounter={updateCounter}
                                         setUpdateCounter={setUpdateCounter}
@@ -79,7 +79,7 @@ const Admin = () => {
                                 </Grid>
                                 <Grid item xs={12} md={6}>
                                     <FirestoreListing
-                                        // category={galleryConfig.category}
+                                        // category={uploadConfig.category}
                                         folder="publications"
                                         updateCounter={updateCounter}
                                         setUpdateCounter={setUpdateCounter}
@@ -95,7 +95,7 @@ const Admin = () => {
                                 </Grid>
                                 <Grid item xs={12} md={6}>
                                     <FirebaseContributorListing
-                                        // category={galleryConfig.category}
+                                        // category={uploadConfig.category}
                                         folder="contributors"
                                         updateCounter={updateCounter}
                                         setUpdateCounter={setUpdateCounter}

@@ -7,7 +7,7 @@ import { db } from "../../../firebase";
 
 const index = ({ bestof }) => {
     return (
-        <PageLayout name="Best of bestof">
+        <PageLayout name="Best of the &rsquo;Ville">
             <Grid className="section" container spacing={3}>
                 {bestof.map((bestof, index) => {
                     return (

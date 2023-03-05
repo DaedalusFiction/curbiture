@@ -286,13 +286,13 @@ const Navbar = () => {
                                                             .split(" ")
                                                             .join("")
                                                     )
-                                                        ? theme.palette
-                                                              .secondary.main
+                                                        ? theme.palette.primary
+                                                              .main
                                                         : theme.palette.custom
                                                               .light,
                                                     "&:hover": {
                                                         color: theme.palette
-                                                            .custom.light,
+                                                            .primary.main,
                                                     },
                                                 }}
                                             >
