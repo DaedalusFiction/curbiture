@@ -19,8 +19,9 @@ const Navbar = () => {
     const [expanded, setExpanded] = useState(false);
     const [titleFontSize, setTitleFontSize] = useState("2.75rem");
     const router = useRouter();
-    const currentPage = router.pathname.split("/")[1];
     const path = router.pathname.split("/");
+    const [logoColorPrimary, setLogoColorPrimary] = useState("#ff5a5f");
+    const [logoColorSecondary, setLogoColorSecondary] = useState("#b7FFD8");
 
     const [trigger, setTrigger] = useState(true);
 
@@ -68,6 +69,15 @@ const Navbar = () => {
 
     const handleMouseLeave = () => {
         setExpanded(false);
+    };
+
+    const invertLogoColors = () => {
+        setLogoColorPrimary("#b7FFD8");
+        setLogoColorSecondary("#ff5a5f");
+    };
+    const restoreLogoColors = () => {
+        setLogoColorPrimary("#ff5a5f");
+        setLogoColorSecondary("#b7FFD8");
     };
 
     return (
@@ -167,23 +177,27 @@ const Navbar = () => {
                                 >
                                     <Link href="/">
                                         <Typography
+                                            onMouseEnter={() => {
+                                                invertLogoColors();
+                                            }}
+                                            onMouseLeave={() => {
+                                                restoreLogoColors();
+                                            }}
                                             sx={{
                                                 margin: "0",
-                                                transition: "300ms",
+                                                transition: "150ms",
                                                 fontSize: titleFontSize,
                                                 letterSpacing: ".1em",
                                                 fontFamily: "Anton",
                                                 textAlign: "center",
                                                 cursor: "pointer",
                                                 textTransform: "uppercase",
-                                                color: theme.palette.secondary
-                                                    .main,
+                                                color: logoColorSecondary,
                                             }}
                                         >
                                             <span
                                                 style={{
-                                                    color: theme.palette.primary
-                                                        .main,
+                                                    color: logoColorPrimary,
                                                 }}
                                             >
                                                 CURB
@@ -221,23 +235,27 @@ const Navbar = () => {
                                             onClick={() => {
                                                 navigateToTop();
                                             }}
+                                            onMouseEnter={() => {
+                                                invertLogoColors();
+                                            }}
+                                            onMouseLeave={() => {
+                                                restoreLogoColors();
+                                            }}
                                             sx={{
                                                 margin: "0",
-                                                transition: "300ms",
+                                                transition: "150ms",
                                                 fontSize: titleFontSize,
                                                 letterSpacing: ".1em",
                                                 fontFamily: "Anton",
                                                 textAlign: "center",
                                                 cursor: "pointer",
                                                 textTransform: "uppercase",
-                                                color: theme.palette.secondary
-                                                    .main,
+                                                color: logoColorSecondary,
                                             }}
                                         >
                                             <span
                                                 style={{
-                                                    color: theme.palette.primary
-                                                        .main,
+                                                    color: logoColorPrimary,
                                                 }}
                                             >
                                                 CURB
