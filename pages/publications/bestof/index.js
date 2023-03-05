@@ -2,20 +2,17 @@ import { Grid } from "@mui/material";
 import { collection, getDocs, orderBy, query, where } from "firebase/firestore";
 import React from "react";
 import PageLayout from "../../../components/layout/PageLayout";
-import CraigslistPreview from "../../../components/previews/CragislistPreview";
+import BestofPreview from "../../../components/previews/BestofPreview";
 import { db } from "../../../firebase";
 
-const index = ({ craigslist }) => {
+const index = ({ bestof }) => {
     return (
-        <PageLayout name="Best of Craigslist">
+        <PageLayout name="Best of bestof">
             <Grid className="section" container spacing={3}>
-                {craigslist.map((craigslist, index) => {
+                {bestof.map((bestof, index) => {
                     return (
                         <Grid key={index} item xs={12} sm={6} md={3}>
-                            <CraigslistPreview
-                                item={craigslist}
-                                category="craigslist"
-                            />
+                            <bestofPreview item={bestof} category="bestof" />
                         </Grid>
                     );
                 })}
@@ -26,22 +23,22 @@ const index = ({ craigslist }) => {
 
 export const getServerSideProps = async (context) => {
     const publicationsRef = collection(db, "publications");
-    const craigslistQuery = query(
+    const bestofQuery = query(
         publicationsRef,
-        where("categories", "array-contains", "craigslist"),
+        where("categories", "array-contains", "bestof"),
         orderBy("dateUploaded", "desc")
     );
 
-    const craigslistSnapshot = await getDocs(craigslistQuery);
+    const bestofSnapshot = await getDocs(bestofQuery);
 
-    let craigslist = [];
-    craigslistSnapshot.docs.forEach((doc, index) => {
-        craigslist = [...craigslist, doc.data()];
+    let bestof = [];
+    bestofSnapshot.docs.forEach((doc, index) => {
+        bestof = [...bestof, doc.data()];
     });
 
     return {
         props: {
-            craigslist,
+            bestof,
         },
     };
 };
