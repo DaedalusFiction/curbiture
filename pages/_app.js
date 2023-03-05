@@ -21,7 +21,7 @@ const MyApp = (props) => {
         <CacheProvider value={emotionCache}>
             <ThemeProvider theme={theme}>
                 <CssBaseline />
-                <Script
+                {/* <Script
                     strategy="afterInteractive"
                     src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"
                 />
@@ -38,7 +38,7 @@ const MyApp = (props) => {
                                 });
                                 `,
                     }}
-                />
+                /> */}
                 <Layout>
                     <Component {...pageProps} />
                 </Layout>

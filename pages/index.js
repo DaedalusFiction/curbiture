@@ -88,7 +88,10 @@ export default function Home({ misc, advice, craigslist, opinions }) {
                             marginBottom: "2rem",
                         }}
                     >
-                        <Typography variant="body2">
+                        <Typography
+                            variant="body2"
+                            sx={{ textAlign: "center" }}
+                        >
                             <span style={{ textDecoration: "underline" }}>
                                 <Link href="/subscribe">Subscribe</Link>
                             </span>{" "}
