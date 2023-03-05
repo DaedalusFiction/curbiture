@@ -27,8 +27,7 @@ const index = () => {
                             <Typography>
                                 Owen Cash lives life on the edge. Whether
                                 it&rsquo;s skydiving in Rio, amateur bullriding,
-                                investing in the latest cryptocurrencies, asking
-                                out the barista at his favorite coffee shop, or
+                                investing in the latest cryptocurrencies, or
                                 eating soft cheese that he left out overnight,
                                 Owen doesn&rsquo;t let things like potential
                                 consequences get in the way of living his life.

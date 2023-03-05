@@ -75,13 +75,7 @@ const SidebarInfo = () => {
     );
 };
 
-export default function Home({
-    allPublications,
-    misc,
-    advice,
-    craigslist,
-    opinions,
-}) {
+export default function Home({ misc, advice, craigslist, opinions }) {
     return (
         <Container maxWidth="xl" sx={{ paddingTop: "6rem" }}>
             <Meta />
