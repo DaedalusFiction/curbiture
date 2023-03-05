@@ -22,7 +22,7 @@ const index = ({ misc }) => {
     );
 };
 
-export const getStaticProps = async (context) => {
+export const getServerSideProps = async (context) => {
     const publicationsRef = collection(db, "publications");
     const miscQuery = query(
         publicationsRef,

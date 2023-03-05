@@ -27,7 +27,7 @@ const index = ({ advice }) => {
     );
 };
 
-export const getStaticProps = async (context) => {
+export const getServerSideProps = async (context) => {
     const publicationsRef = collection(db, "publications");
     const adviceQuery = query(
         publicationsRef,

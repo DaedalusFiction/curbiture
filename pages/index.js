@@ -15,7 +15,7 @@ import Meta from "../components/home/Meta";
 import Link from "next/link";
 import SocialMediaIcons from "../components/general/SocialMediaIcons";
 import AdvicePreview from "../components/previews/AdvicePreview";
-import CraigslistPreview from "../components/previews/CragislistPreview";
+import BestofPreview from "../components/previews/BestofPreview";
 import OpinionPreview from "../components/previews/OpinionPreview";
 import theme from "../styles/themes/theme";
 import MiscPreview from "../components/previews/MiscPreview";
@@ -30,7 +30,7 @@ const SidebarInfo = () => {
             <Divider sx={{ margin: ".5rem 0 .5rem 0" }} />
             <ImageFadeIn
                 src={"/images/curbnotefiltered2.webp"}
-                alt="craigslist ad"
+                alt="bestof ad"
                 height={400}
                 width={500}
             />
@@ -41,7 +41,7 @@ const SidebarInfo = () => {
             >
                 CURBITURE aims to bring you all of the best that C&rsquo;ville
                 has to offer, from local celebrities, events, and news to rants,
-                craigslist finds, oddities, and more.
+                bestof finds, oddities, and more.
             </Typography>
             <Typography
                 variant="body1"
@@ -49,7 +49,7 @@ const SidebarInfo = () => {
             >
                 In addition to posting articles and advice, our journalists and
                 editorial team collaborate with local contributors. We are not
-                affiliated with UVA, Craigslist, or any political party.
+                affiliated with UVA, bestof, or any political party.
             </Typography>
             <Typography
                 variant="body1"
@@ -75,7 +75,7 @@ const SidebarInfo = () => {
     );
 };
 
-export default function Home({ misc, advice, craigslist, opinions }) {
+export default function Home({ misc, advice, bestof, opinions }) {
     return (
         <Container maxWidth="xl" sx={{ paddingTop: "6rem" }}>
             <Meta />
@@ -268,15 +268,15 @@ export default function Home({ misc, advice, craigslist, opinions }) {
                                             fontSize: "2rem",
                                         }}
                                     >
-                                        Buff Bec&rsquo;s Best of C&rsquo;ville
-                                        Craigslist
+                                        Buff Bec&rsquo;s Best of the
+                                        &rsquo;Ville
                                     </Typography>
                                     <Divider
                                         sx={{ margin: ".5rem 0 1rem 0" }}
                                     />
                                 </Grid>
-                                {craigslist &&
-                                    craigslist.map((listing, index) => {
+                                {bestof &&
+                                    bestof.map((listing, index) => {
                                         return (
                                             <Grid
                                                 item
@@ -292,7 +292,7 @@ export default function Home({ misc, advice, craigslist, opinions }) {
                                                         alignItems: "center",
                                                     }}
                                                 >
-                                                    <CraigslistPreview
+                                                    <BestofPreview
                                                         category="opinions"
                                                         item={listing}
                                                     />
@@ -301,7 +301,6 @@ export default function Home({ misc, advice, craigslist, opinions }) {
                                         );
                                     })}
                             </Grid>
-                            <Divider sx={{ margin: ".5rem 0 1rem 0" }} />
                         </Grid>
                     </Grid>
                 </Grid>
@@ -357,54 +356,6 @@ export default function Home({ misc, advice, craigslist, opinions }) {
                             );
                         })}
                 </Grid>
-                {/* <Grid
-                    item
-                    xs={12}
-                    md={0.25}
-                    sx={{
-                        display: {
-                            xs: "none",
-                            md: "flex",
-                            flexDirection: "column",
-                        },
-                    }}
-                >
-                    <Box
-                        sx={{
-                            height: "100%",
-                            display: "flex",
-                            justifyContent: "center",
-                            padding: { xs: "none", md: "3.25rem 0" },
-                        }}
-                    >
-                        <Divider orientation="vertical" />
-                    </Box>
-                </Grid> */}
-
-                {/* <Grid
-                    item
-                    xs={12}
-                    md={6}
-                    sx={{
-                        display: {
-                            xs: "flex",
-                            md: "none",
-                        },
-                        flexDirection: "column",
-                    }}
-                >
-                    {allPublications &&
-                        allPublications.map((publication, index) => {
-                            return (
-                                <StoryPreview
-                                    story={publication}
-                                    key={index}
-                                    category="publications"
-                                />
-                            );
-                        })}
-                    <SidebarInfo />
-                </Grid> */}
             </Grid>
             <Box
                 className="section"
@@ -435,7 +386,7 @@ export default function Home({ misc, advice, craigslist, opinions }) {
     );
 }
 
-export const getStaticProps = async (context) => {
+export const getServerSideProps = async (context) => {
     const publicationsRef = collection(db, "publications");
     const allPublicationsQuery = query(
         publicationsRef,
@@ -455,9 +406,9 @@ export const getStaticProps = async (context) => {
         orderBy("dateUploaded", "desc"),
         limit(5)
     );
-    const craigslistQuery = query(
+    const bestofQuery = query(
         publicationsRef,
-        where("categories", "array-contains", "craigslist"),
+        where("categories", "array-contains", "bestof"),
 
         orderBy("dateUploaded", "desc"),
         limit(4)
@@ -470,15 +421,10 @@ export const getStaticProps = async (context) => {
         limit(2)
     );
 
-    const allPublicationsSnapshot = await getDocs(allPublicationsQuery);
     const miscSnapshot = await getDocs(miscQuery);
     const adviceSnapshot = await getDocs(adviceQuery);
-    const craigslistSnapshot = await getDocs(craigslistQuery);
+    const bestofSnapshot = await getDocs(bestofQuery);
     const opinionsSnapshot = await getDocs(opinionsQuery);
-    let allPublications = [];
-    allPublicationsSnapshot.docs.forEach((doc, index) => {
-        allPublications = [...allPublications, doc.data()];
-    });
     let misc = [];
     miscSnapshot.docs.forEach((doc, index) => {
         misc = [...misc, doc.data()];
@@ -487,9 +433,9 @@ export const getStaticProps = async (context) => {
     adviceSnapshot.docs.forEach((doc, index) => {
         advice = [...advice, doc.data()];
     });
-    let craigslist = [];
-    craigslistSnapshot.docs.forEach((doc, index) => {
-        craigslist = [...craigslist, doc.data()];
+    let bestof = [];
+    bestofSnapshot.docs.forEach((doc, index) => {
+        bestof = [...bestof, doc.data()];
     });
     let opinions = [];
     opinionsSnapshot.docs.forEach((doc, index) => {
@@ -498,10 +444,9 @@ export const getStaticProps = async (context) => {
 
     return {
         props: {
-            allPublications,
             misc,
             advice,
-            craigslist,
+            bestof,
             opinions,
         },
     };

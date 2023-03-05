@@ -22,7 +22,7 @@ const index = ({ opinion }) => {
     );
 };
 
-export const getStaticProps = async (context) => {
+export const getServerSideProps = async (context) => {
     const publicationsRef = collection(db, "publications");
     const opinionQuery = query(
         publicationsRef,

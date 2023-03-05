@@ -299,8 +299,8 @@ const pages = [
         subPages: [],
     },
     {
-        name: "craigslist",
-        href: "/publications/craigslist",
+        name: "Best Of",
+        href: "/publications/bestof",
         subPages: [],
     },
     {

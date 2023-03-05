@@ -2,11 +2,11 @@ import { Box, Divider, Fade, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
-import SizedImage from "../../components/general/SizedImage";
+import SizedImage from "../general/SizedImage";
 import ImageFadeIn from "../general/ImageFadeIn";
 
-const CraigslistPreview = ({ item }) => {
-    const itemHref = "/publications/craigslist/" + item.fields[0].value;
+const BestofPreview = ({ item }) => {
+    const itemHref = "/publications/bestof/" + item.fields[0].value;
     const authorHref = "/contributors/" + item.fields[1].value;
 
     return (
@@ -15,7 +15,7 @@ const CraigslistPreview = ({ item }) => {
                 <div className=" link link-image">
                     <ImageFadeIn
                         src={item.URLs[0]}
-                        alt="craigslist ad"
+                        alt="bestof ad"
                         height={500}
                         width={500}
                     />
@@ -95,4 +95,4 @@ const CraigslistPreview = ({ item }) => {
     );
 };
 
-export default CraigslistPreview;
+export default BestofPreview;
