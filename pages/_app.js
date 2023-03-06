@@ -21,9 +21,9 @@ const MyApp = (props) => {
         <CacheProvider value={emotionCache}>
             <ThemeProvider theme={theme}>
                 <CssBaseline />
-                {/* <Script
+                <Script
                     strategy="afterInteractive"
-                    src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"
+                    src="https://www.googletagmanager.com/gtag/js?id=G-NXV0KGQHF7"
                 />
                 <Script
                     id="google-analytics"
@@ -33,12 +33,11 @@ const MyApp = (props) => {
                                 window.dataLayer = window.dataLayer || [];
                                 function gtag(){dataLayer.push(arguments);}
                                 gtag('js', new Date());
-                                gtag('config', 'G-9CFL7L59BE', {
-                                page_path: window.location.pathname,
-                                });
+                                gtag('config', 'G-NXV0KGQHF7');
                                 `,
                     }}
-                /> */}
+                />
+
                 <Layout>
                     <Component {...pageProps} />
                 </Layout>
