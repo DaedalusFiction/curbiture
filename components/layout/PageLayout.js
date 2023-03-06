@@ -11,7 +11,14 @@ const PageLayout = ({ name, children }) => {
             <Box sx={{ padding: "8rem 0" }}>
                 {/* <Meta siteName={name} /> */}
                 <Container maxWidth="xl">
-                    <Typography variant="h1" sx={{ textAlign: "center" }}>
+                    <Typography
+                        variant="h1"
+                        sx={{
+                            textAlign: "center",
+                            textTransform: "uppercase",
+                            fontFamily: "Anton",
+                        }}
+                    >
                         {name}
                     </Typography>
                     {children}

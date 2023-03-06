@@ -77,7 +77,7 @@ const SidebarInfo = () => {
 
 export default function Home({ misc, advice, bestof, opinions }) {
     return (
-        <Container maxWidth="xl" sx={{ paddingTop: "6rem" }}>
+        <Container maxWidth="xl" sx={{ paddingTop: "5rem" }}>
             <Meta />
             <Grid container>
                 <Grid item xs={12}>
@@ -85,7 +85,7 @@ export default function Home({ misc, advice, bestof, opinions }) {
                         sx={{
                             display: "flex",
                             justifyContent: "center",
-                            marginBottom: "2rem",
+                            marginBottom: "1rem",
                         }}
                     >
                         <Typography
@@ -95,7 +95,7 @@ export default function Home({ misc, advice, bestof, opinions }) {
                             <span style={{ textDecoration: "underline" }}>
                                 <Link href="/subscribe">Subscribe</Link>
                             </span>{" "}
-                            to our mailing list, motherfuckers
+                            to our mailing list
                         </Typography>
                     </Box>
                 </Grid>
@@ -173,14 +173,16 @@ export default function Home({ misc, advice, bestof, opinions }) {
                                 sx={{
                                     backgroundColor:
                                         theme.palette.background.accent,
-                                    marginBottom: "1rem",
+                                    margin: "1rem 0",
                                 }}
                             >
                                 <Typography
                                     variant="h2"
                                     sx={{
                                         textAlign: "center",
+                                        fontFamily: "Anton",
                                         marginBottom: ".5em",
+                                        textTransform: "uppercase",
                                     }}
                                 >
                                     Want to support Curbiture?
@@ -388,16 +390,12 @@ export default function Home({ misc, advice, bestof, opinions }) {
 
 export const getServerSideProps = async (context) => {
     const publicationsRef = collection(db, "publications");
-    const allPublicationsQuery = query(
-        publicationsRef,
-        orderBy("dateUploaded", "desc"),
-        limit(7)
-    );
+
     const miscQuery = query(
         publicationsRef,
         where("categories", "array-contains", "misc"),
         orderBy("dateUploaded", "desc"),
-        limit(1)
+        limit(2)
     );
     const adviceQuery = query(
         publicationsRef,

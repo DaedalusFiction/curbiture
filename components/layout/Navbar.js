@@ -102,6 +102,8 @@ const Navbar = () => {
                             <Box
                                 sx={{
                                     display: { xs: "flex", lg: "none" },
+                                    height: "100%",
+                                    alignItems: "center",
                                 }}
                             >
                                 <IconButton
@@ -160,7 +162,6 @@ const Navbar = () => {
                                     justifyContent: "end",
                                     paddingRight: "1em",
                                     height: "100%",
-                                    // width: "100%",
                                 }}
                             >
                                 <Typography
