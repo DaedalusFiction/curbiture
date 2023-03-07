@@ -1,6 +1,7 @@
 import { Box, Divider, Typography } from "@mui/material";
 import Link from "next/link";
 import React from "react";
+import theme from "../../styles/themes/theme";
 
 const AdvicePreview = ({ item }) => {
     const itemHref = "/publications/advice/" + item.fields[0].value;
@@ -24,16 +25,20 @@ const AdvicePreview = ({ item }) => {
                 <Typography
                     variant="h4"
                     className="link"
-                    sx={{ marginBottom: ".5em" }}
+                    sx={{ marginBottom: ".25em" }}
                 >
                     <Link href={itemHref}>{`${item.fields[0].value}?`}</Link>
                 </Typography>
-                {/* <Typography
-                    variant="body2"
-                    sx={{ margin: ".25rem 0", fontSize: "1rem" }}
+                <Typography
+                    variant="body1"
+                    sx={{
+                        margin: ".25rem 0",
+                        fontSize: "1rem",
+                        color: theme.palette.custom.darkMuted,
+                    }}
                 >
                     {item.fields[2].value}
-                </Typography> */}
+                </Typography>
                 <Box>
                     <Typography
                         variant="h6"

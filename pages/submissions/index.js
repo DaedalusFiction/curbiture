@@ -47,8 +47,10 @@ const index = () => {
                                     <ListItem>
                                         <ListItemText>
                                             All submissions should be emailed
-                                            directly to
-                                            curbituresubmissions@gmail.com.
+                                            directly to{" "}
+                                            <strong>
+                                                CharlottesvilleCurbiture@gmail.com
+                                            </strong>
                                         </ListItemText>
                                     </ListItem>
                                     <ListItem>

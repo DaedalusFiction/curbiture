@@ -274,7 +274,7 @@ const imageSubmissionsConfig = {
 
 const pages = [
     {
-        name: "misc",
+        name: "Misc",
         href: "/publications/misc",
         subPages: [],
     },
@@ -284,12 +284,12 @@ const pages = [
         subPages: [],
     },
     {
-        name: "opinions",
+        name: "Opinions",
         href: "/publications/opinions",
         subPages: [],
     },
     {
-        name: "advice",
+        name: "Advice",
         href: "/publications/advice",
         subPages: [],
     },
@@ -299,7 +299,7 @@ const pages = [
     //     subPages: [],
     // },
     {
-        name: "about",
+        name: "About",
         href: "/about",
         subPages: [
             { name: "Masthead", href: "/about/masthead" },
@@ -309,7 +309,7 @@ const pages = [
             },
         ],
     },
-    { name: "submissions", href: "/submissions", subPages: [] },
+    { name: "Submissions", href: "/submissions", subPages: [] },
 ];
 
 export {

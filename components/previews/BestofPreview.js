@@ -4,6 +4,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import SizedImage from "../general/SizedImage";
 import ImageFadeIn from "../general/ImageFadeIn";
+import theme from "../../styles/themes/theme";
 
 const BestofPreview = ({ item }) => {
     const itemHref = "/publications/bestof/" + item.fields[0].value;
@@ -50,7 +51,7 @@ const BestofPreview = ({ item }) => {
                 <Typography
                     className="link"
                     variant="h4"
-                    sx={{ textAlign: "center", marginBottom: ".5em" }}
+                    sx={{ textAlign: "center", marginBottom: ".25em" }}
                 >
                     <Link href={itemHref}>{item.fields[0].value}</Link>
                 </Typography>
@@ -60,36 +61,11 @@ const BestofPreview = ({ item }) => {
                         margin: ".25rem 0",
                         fontSize: "1rem",
                         textAlign: "center",
+                        color: theme.palette.custom.darkMuted,
                     }}
                 >
                     {item.fields[2].value}
                 </Typography>
-                {/* <Box sx={{ display: "flex", justifyContent: "center" }}>
-                    <Box>
-                        <Typography
-                            variant="h6"
-                            sx={{
-                                display: "inline-block",
-                                marginRight: ".35em",
-                            }}
-                        >
-                            by
-                        </Typography>
-                        <Typography
-                            className="link"
-                            variant="h5"
-                            component="p"
-                            sx={{
-                                textTransform: "uppercase",
-                                display: "inline-block",
-                            }}
-                        >
-                            <Link href={authorHref}>
-                                {item.fields[1].value}
-                            </Link>
-                        </Typography>
-                    </Box>
-                </Box> */}
             </Box>
         </Box>
     );

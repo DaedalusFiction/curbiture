@@ -2,6 +2,7 @@ import { Box, Divider, Fade, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
+import theme from "../../styles/themes/theme";
 
 const MiscPreview = ({ misc }) => {
     const [ratio, setRatio] = useState(1 / 1); // default to 16:9
@@ -53,13 +54,17 @@ const MiscPreview = ({ misc }) => {
                 <Typography
                     className="link"
                     variant="h4"
-                    sx={{ marginBottom: ".5em" }}
+                    sx={{ marginBottom: ".25em" }}
                 >
                     <Link href={miscHref}>{misc.fields[0].value}</Link>
                 </Typography>
                 <Typography
                     variant="body1"
-                    sx={{ margin: ".25rem 0", fontSize: "1rem" }}
+                    sx={{
+                        margin: ".25rem 0",
+                        fontSize: "1rem",
+                        color: theme.palette.custom.darkMuted,
+                    }}
                 >
                     {misc.fields[2].value}
                 </Typography>

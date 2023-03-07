@@ -30,7 +30,8 @@ const PublicationsHeader = ({ publication, authorHref }) => {
                 <Typography
                     sx={{
                         margin: ".25em 0",
-                        fontSize: "3rem",
+                        fontSize: "3.5rem",
+                        fontWeight: "600",
                     }}
                     variant="h1"
                 >

@@ -274,13 +274,28 @@ const Navbar = () => {
                                         width: "100%",
                                         height: "100%",
                                         justifyContent: "end",
-                                        gap: "1em",
+                                        gap: "1.5em",
                                     }}
                                 >
                                     {pages.map((page, index) => (
-                                        <Link key={index} href={page.href}>
+                                        <Typography
+                                            key={index}
+                                            className="hover-underline-animation"
+                                            sx={{
+                                                lineHeight: "1.25em",
+                                                color: theme.palette.secondary
+                                                    .main,
+                                            }}
+                                        >
+                                            <Link href={page.href}>
+                                                {page.name}
+                                            </Link>
+                                        </Typography>
+                                    ))}
+                                    {/* <Link key={index} href={page.href}>
                                             <Button
                                                 onMouseEnter={handleMouseEnter}
+                                                component="a"
                                                 sx={{
                                                     color: path.includes(
                                                         page.name
@@ -299,8 +314,7 @@ const Navbar = () => {
                                             >
                                                 {page.name}
                                             </Button>
-                                        </Link>
-                                    ))}
+                                        </Link> */}
 
                                     <Link href={navbar.buttonOne.href}>
                                         <Button
