@@ -9,67 +9,24 @@ import {
     query,
     where,
 } from "firebase/firestore";
-import Image from "next/image";
 import NativeImage from "../../../components/general/NativeImage";
 import { db } from "../../../firebase";
-import { Typography } from "@mui/material";
+import { Divider, Grid, Typography } from "@mui/material";
 import PublicationBody from "../../../components/publications/PublicationBody";
 import Link from "next/link";
+import SidebarInfo from "../../../components/layout/SidebarInfo";
+import PublicationsHeader from "../../../components/publications/PublicationsHeader";
 
 const page = ({ articles, story }) => {
+    const authorHref = "/contributors/" + story.fields[1].value;
     return (
-        <Box>
-            <Container maxWidth="xl" disableGutters>
-                <Box>
-                    <NativeImage
-                        maxSize={3000}
-                        image={{ url: story.URLs[0], alt: "article" }}
-                    />
-                </Box>
-            </Container>
+        <Box className="section">
             <Container>
-                <Box sx={{ display: "flex", justifyContent: "end" }}>
-                    <Typography variant="caption">
-                        {story.fields[4].value}
-                    </Typography>
-                </Box>
                 <Box sx={{ padding: "3rem 0" }}>
-                    <Box
-                        sx={{
-                            display: "flex",
-                            gap: ".25em",
-                            justifyContent: "center",
-                        }}
-                    >
-                        {story.subCategories.map((subCategory, index) => {
-                            return (
-                                <Typography key={index} variant="caption">
-                                    [{subCategory}]
-                                </Typography>
-                            );
-                        })}
-                    </Box>
-                    <Typography
-                        sx={{ textAlign: "center", margin: ".25em 0" }}
-                        variant="h1"
-                    >
-                        {story.fields[0].value}
-                    </Typography>
-                    <Typography sx={{ textAlign: "center" }}>by</Typography>
-                    <Typography
-                        sx={{
-                            textAlign: "center",
-                            margin: ".5em 0",
-                            "&:hover": {
-                                textDecoration: "underline",
-                            },
-                        }}
-                        variant="h4"
-                    >
-                        <Link href={`/contributors/${story.fields[1].value}`}>
-                            {story.fields[1].value}
-                        </Link>
-                    </Typography>
+                    <PublicationsHeader
+                        publication={story}
+                        authorHref={authorHref}
+                    />
                     <PublicationBody
                         sidebarCategory="Opinions"
                         sidebarItems={articles}

@@ -1,6 +1,5 @@
 import { Box, Container, Grid, Typography } from "@mui/material";
-import SizedImage from "../../../components/general/SizedImage";
-import { studioContent } from "../../../siteInfo";
+import ImageFadeIn from "../../../components/general/ImageFadeIn";
 import PageLayout from "../../../components/layout/PageLayout";
 import AboutNavbar from "../../../components/about/AboutNavbar";
 
@@ -10,8 +9,14 @@ const index = () => {
             <AboutNavbar />
             <Container maxWidth="md">
                 <Box className="section">
-                    <Grid container spacing={6}>
+                    <Grid container>
                         <Grid item xs={12}>
+                            <ImageFadeIn
+                                src="/images/preacherman.webp"
+                                height={580}
+                                width={910}
+                            />
+                            <br />
                             <Typography sx={{ whiteSpace: "pre-wrap" }}>
                                 We are on a mission to change the world. More on
                                 that later.
