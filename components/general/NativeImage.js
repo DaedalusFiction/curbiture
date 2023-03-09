@@ -1,22 +1,31 @@
 import React, { useState } from "react";
 import Image from "next/image";
+import { Fade } from "@mui/material";
 
-const NativeImage = ({ image, maxSize }) => {
+const NativeImage = ({ src, maxSize, alt }) => {
     const [ratio, setRatio] = useState(1 / 1); // default to 16:9
-
+    const [loaded, setLoaded] = useState(false);
+    const handleLoadComplete = (naturalWidth, naturalHeight) => {
+        setRatio(naturalWidth / naturalHeight);
+        setLoaded(true);
+    };
     return (
-        <Image
-            src={image.url}
-            //has to be unoptimized to work with firebase storage, apparently.
-            unoptimized
-            width={maxSize}
-            height={maxSize / ratio}
-            onLoadingComplete={({ naturalWidth, naturalHeight }) =>
-                setRatio(naturalWidth / naturalHeight)
-            }
-            objectFit="cover"
-            alt={image.alt}
-        />
+        <Fade in={loaded}>
+            <div>
+                <Image
+                    src={src}
+                    //has to be unoptimized to work with firebase storage, apparently.
+                    unoptimized
+                    width={maxSize}
+                    height={maxSize / ratio}
+                    onLoadingComplete={({ naturalWidth, naturalHeight }) =>
+                        handleLoadComplete(naturalWidth, naturalHeight)
+                    }
+                    objectFit="cover"
+                    alt={alt}
+                />
+            </div>
+        </Fade>
     );
 };
 

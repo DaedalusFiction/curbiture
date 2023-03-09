@@ -13,18 +13,16 @@ import {
 import { db } from "../firebase";
 import Meta from "../components/home/Meta";
 import Link from "next/link";
-import SocialMediaIcons from "../components/general/SocialMediaIcons";
 import AdvicePreview from "../components/previews/AdvicePreview";
 import BestofPreview from "../components/previews/BestofPreview";
 import OpinionPreview from "../components/previews/OpinionPreview";
 import theme from "../styles/themes/theme";
 import MiscPreview from "../components/previews/MiscPreview";
-import ImageFadeIn from "../components/general/ImageFadeIn";
 import SidebarInfo from "../components/layout/SidebarInfo";
 
 export default function Home({ misc, advice, bestof, opinions }) {
     return (
-        <Container maxWidth="xl" sx={{ paddingTop: "5rem" }}>
+        <Container maxWidth="xl" sx={{ paddingTop: "5.5rem" }}>
             <Meta />
             <Grid container>
                 <Grid item xs={12}>
@@ -39,10 +37,11 @@ export default function Home({ misc, advice, bestof, opinions }) {
                             variant="body2"
                             sx={{ textAlign: "center" }}
                         >
+                            Check Out Some of Charlottesville&rsquo;s Upcoming
+                            Alternative{" "}
                             <span style={{ textDecoration: "underline" }}>
-                                <Link href="/subscribe">Subscribe</Link>
-                            </span>{" "}
-                            to our mailing list
+                                <Link href="/events">Events</Link>
+                            </span>
                         </Typography>
                     </Box>
                 </Grid>
@@ -322,9 +321,9 @@ export default function Home({ misc, advice, bestof, opinions }) {
                             fontStyle: "italic",
                         }}
                     >
-                        Have an alternative event in Charlottesville coming up
-                        that you&rsquo;d like to get the word out on? Let us
-                        know and we&rsquo;ll advertise it, for free!
+                        Do you have an alternative event in Charlottesville
+                        coming up that you&rsquo;d like to get the word out on?
+                        Let us know and we&rsquo;ll promote it here, for free!
                     </Typography>
                 </Box>
             </Box>

@@ -175,9 +175,9 @@ const secondaryProfiles = [
     {
         image: {
             url: "/images/buffBec.webp",
-            alt: "Sandy Beaches",
+            alt: "Buff Bec",
         },
-        name: "Sandy (Buff) Beaches",
+        name: "Buff Bec",
         content: "Bruce is the greatest.",
     },
     {
@@ -303,11 +303,11 @@ const pages = [
         href: "/publications/advice",
         subPages: [],
     },
-    // {
-    //     name: "contributors",
-    //     href: "/contributors",
-    //     subPages: [],
-    // },
+    {
+        name: "Events",
+        href: "/events",
+        subPages: [],
+    },
     {
         name: "About",
         href: "/about",
