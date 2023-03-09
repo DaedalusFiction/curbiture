@@ -9,14 +9,8 @@ import {
     query,
     where,
 } from "firebase/firestore";
-import Image from "next/image";
-import React, { useState } from "react";
-import PageLayout from "../../../components/layout/PageLayout";
-import NativeImage from "../../../components/general/NativeImage";
 import { db } from "../../../firebase";
-import { Typography } from "@mui/material";
 import PublicationBody from "../../../components/publications/PublicationBody";
-import Link from "next/link";
 import PublicationsHeader from "../../../components/publications/PublicationsHeader";
 
 const Page = ({ articles, story }) => {
@@ -30,7 +24,7 @@ const Page = ({ articles, story }) => {
                         authorHref={authorHref}
                     />
                     <PublicationBody
-                        sidebarCategory="Opinions"
+                        sidebarCategory="Misc"
                         sidebarItems={articles}
                         story={story}
                     />

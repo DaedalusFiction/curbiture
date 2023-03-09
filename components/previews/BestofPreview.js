@@ -14,11 +14,17 @@ const BestofPreview = ({ item }) => {
         <Box>
             <Link href={itemHref}>
                 <div className=" link link-image">
-                    <ImageFadeIn
+                    {/* <ImageFadeIn
                         src={item.URLs[0]}
                         alt="bestof ad"
                         height={500}
                         width={500}
+                    /> */}
+                    <SizedImage
+                        src={item.URLs[0]}
+                        height="20rem"
+                        width="20rem"
+                        alt="bestof preview"
                     />
                 </div>
             </Link>

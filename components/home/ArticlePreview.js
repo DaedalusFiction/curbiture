@@ -10,7 +10,8 @@ const ArticlePreview = ({ item, category, hideImage }) => {
         setRatio(naturalWidth / naturalHeight);
         setIsLoaded(true);
     };
-    const itemHref = "/publications/articles/" + item.fields[0].value;
+    const itemHref =
+        `/publications/${category.toLowerCase()}/` + item.fields[0].value;
     const authorHref = "/contributors/" + item.fields[1].value;
     return (
         <Box>

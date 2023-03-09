@@ -12,7 +12,7 @@ const index = ({ bestof }) => {
                 {bestof.map((bestof, index) => {
                     return (
                         <Grid key={index} item xs={12} sm={6} md={3}>
-                            <bestofPreview item={bestof} category="bestof" />
+                            <BestofPreview item={bestof} category="bestof" />
                         </Grid>
                     );
                 })}

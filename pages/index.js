@@ -305,7 +305,7 @@ export default function Home({ misc, advice, bestof, opinions }) {
                         })}
                 </Grid>
             </Grid>
-            {/* <Box
+            <Box
                 className="section"
                 sx={{
                     background: theme.palette.background.accent,
@@ -322,14 +322,12 @@ export default function Home({ misc, advice, bestof, opinions }) {
                             fontStyle: "italic",
                         }}
                     >
-                        If you are an MFA student or undergrad, or aspiring
-                        career writer, and you need something to put on your
-                        resume, please contact Curbiture and we will put you on
-                        the masthead. You don&rsquo;t even have to contribute or
-                        anything.
+                        Have an alternative event in Charlottesville coming up
+                        that you&rsquo;d like to get the word out on? Let us
+                        know and we&rsquo;ll advertise it, for free!
                     </Typography>
                 </Box>
-            </Box> */}
+            </Box>
         </Container>
     );
 }
