@@ -80,13 +80,23 @@ const uploadCategories = [
         image: { url: "/images/placeholder.webp", alt: "alt text" },
         subCategories: [
             {
-                name: "for sale",
-                href: "/publications/bestof/for sale",
+                name: "craigslist",
+                href: "/publications/bestof/craigslist",
                 image: { url: "/images/placeholder.webp", alt: "alt text" },
             },
             {
-                name: "help wanted",
-                href: "/publications/bestof/help wanted",
+                name: "style",
+                href: "/publications/bestof/style",
+                image: { url: "/images/placeholder.webp", alt: "alt text" },
+            },
+            {
+                name: "food",
+                href: "/publications/bestof/food",
+                image: { url: "/images/placeholder.webp", alt: "alt text" },
+            },
+            {
+                name: "events",
+                href: "/publications/bestof/events",
                 image: { url: "/images/placeholder.webp", alt: "alt text" },
             },
         ],
@@ -165,9 +175,9 @@ const secondaryProfiles = [
     {
         image: {
             url: "/images/buffBec.webp",
-            alt: "Buff Bec",
+            alt: "Sandy Beaches",
         },
-        name: "Buff Bec",
+        name: "Sandy (Buff) Beaches",
         content: "Bruce is the greatest.",
     },
     {

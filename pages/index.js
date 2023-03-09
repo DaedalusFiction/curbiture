@@ -143,7 +143,7 @@ export default function Home({ misc, advice, bestof, opinions }) {
                                     }}
                                 >
                                     Well that&rsquo;s too bad because we
-                                    don&rsquo;t want your fucking blood money.
+                                    don&rsquo;t want your goddamn blood money.
                                 </Typography>
                             </Box>
                         </Grid>
@@ -217,8 +217,7 @@ export default function Home({ misc, advice, bestof, opinions }) {
                                             fontSize: "2rem",
                                         }}
                                     >
-                                        Buff Bec&rsquo;s Best of the
-                                        &rsquo;Ville
+                                        Best of the &rsquo;Ville
                                     </Typography>
                                     <Divider
                                         sx={{ margin: ".5rem 0 1rem 0" }}
@@ -306,7 +305,7 @@ export default function Home({ misc, advice, bestof, opinions }) {
                         })}
                 </Grid>
             </Grid>
-            <Box
+            {/* <Box
                 className="section"
                 sx={{
                     background: theme.palette.background.accent,
@@ -330,7 +329,7 @@ export default function Home({ misc, advice, bestof, opinions }) {
                         anything.
                     </Typography>
                 </Box>
-            </Box>
+            </Box> */}
         </Container>
     );
 }

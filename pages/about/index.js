@@ -17,16 +17,10 @@ const index = () => {
                                 CURBITURE was formed as a venue for the editors
                                 and their friends to publish whatever they want,
                                 whenever they want. We publish the stuff we like
-                                to read, and we do so while making as few
+                                to read and we do so while making as few
                                 apologies as possible. And just like the
                                 furniture you find on the curb, Curbiture might
                                 just be exactly what you&rsquo;re looking for.
-                            </Typography>
-                            <br />
-                            <Typography>
-                                Over the weeks we have collaborated with less
-                                than a dozen local artists, writers, poets, and
-                                journalists, but we expect this number to go up.
                             </Typography>
                         </Grid>
                     </Grid>

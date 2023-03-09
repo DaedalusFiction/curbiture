@@ -23,9 +23,9 @@ const SidebarInfo = () => {
                 variant="body1"
                 sx={{ fontSize: "1rem", margin: ".5rem 0" }}
             >
-                CURBITURE aims to bring you all of the best that C&rsquo;ville
-                has to offer, from local celebrities, events, and news to rants,
-                bestof finds, oddities, and more.
+                CURBITURE supplies the best of what C&rsquo;ville has to offer,
+                from interviews, events, and news to rants, best-of finds,
+                oddities, and more.
             </Typography>
             <Typography
                 variant="body1"

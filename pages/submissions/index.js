@@ -19,25 +19,26 @@ const index = () => {
                     <Grid item xs={12}>
                         <Container maxWidth="md">
                             <Box sx={{ margin: "4rem 0" }}>
-                                <Typography>
+                                {/* <Typography>
                                     CURBITURE only publishes the dumbest shit.
                                     But we don&rsquo;t mean this in a
                                     self-deprecatory way--we like the stuff we
                                     print, and we would only print it if we
                                     thought you&rsquo;d like it too.
                                 </Typography>
-                                <br />
+                                <br /> */}
                                 <Typography variant="h4" component="h3">
                                     What we Publish:
                                 </Typography>
                                 <br />
                                 <Typography>
-                                    We want material that entertains us.
-                                    That&rsquo;s it. We realize that this is
-                                    very open-ended, perhaps frustratingly so,
-                                    but if you want an idea of what sorts of
-                                    things entertain us, then just head over to
-                                    the front page and look around a bit.
+                                    We publish all things pertaining to
+                                    Charlottesville. That&rsquo;s it. We realize
+                                    that this is very open-ended, perhaps
+                                    frustratingly so, but if you want an idea of
+                                    what sorts of things we are looking for,
+                                    then just head over to the front page and
+                                    look around a bit.
                                 </Typography>
                                 <br />
                                 <Typography variant="h4">

@@ -20,7 +20,7 @@ const index = () => {
                         </Typography>
                         <br />
                         <Typography>
-                            Or email us at daedalusfiction@gmail.com.
+                            Or email us at CharlottesvilleCurbiture@gmail.com.
                         </Typography>
                     </Grid>
                     <Grid item xs={12} md={6}>

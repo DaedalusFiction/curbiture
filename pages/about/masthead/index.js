@@ -15,7 +15,7 @@ const index = () => {
                     <Grid item key={index} xs={12} md={4}>
                         <Profile profile={secondaryProfiles[0]}>
                             <Typography>
-                                Buff Bec grew up with The Rose, Atlas
+                                Sandy Beaches grew up with The Rose, Atlas
                                 Underground, and crappy apartments on 5th st.
                                 extended. She is a supporter of The Bridge, Live
                                 Arts, and Cosaic.
