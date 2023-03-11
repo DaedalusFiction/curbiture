@@ -3,7 +3,6 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import Link from "next/link";
-import theme from "../../styles/themes/theme";
 const SocialMediaIcons = ({ fontSize, color }) => {
     return (
         <Stack direction="row" spacing={1}>

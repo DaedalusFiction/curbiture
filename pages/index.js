@@ -19,6 +19,7 @@ import OpinionPreview from "../components/previews/OpinionPreview";
 import theme from "../styles/themes/theme";
 import MiscPreview from "../components/previews/MiscPreview";
 import SidebarInfo from "../components/layout/SidebarInfo";
+import SocialMediaIcons from "../components/general/SocialMediaIcons";
 
 export default function Home({ misc, advice, bestof, opinions }) {
     return (
@@ -44,6 +45,7 @@ export default function Home({ misc, advice, bestof, opinions }) {
                             </span>
                         </Typography>
                     </Box>
+                    <SocialMediaIcons color="secondary" />
                 </Grid>
                 <Grid item xs={12} md={8.875}>
                     <Grid container>

@@ -9,29 +9,54 @@ import {
     query,
     where,
 } from "firebase/firestore";
-import NativeImage from "../../../components/general/NativeImage";
 import { db } from "../../../firebase";
-import { Typography } from "@mui/material";
 import PublicationBody from "../../../components/publications/PublicationBody";
-import Link from "next/link";
 import PublicationsHeader from "../../../components/publications/PublicationsHeader";
+import ShareIcons from "../../../components/general/ShareIcons";
+import { Grid, Paper } from "@mui/material";
 
 const page = ({ articles, misc }) => {
     const authorHref = "/contributors/" + misc.fields[1].value;
     return (
         <Box className="section">
             <Container>
-                <Box sx={{ padding: "3rem 0" }}>
-                    <PublicationsHeader
-                        publication={misc}
-                        authorHref={authorHref}
-                    />
-                    <PublicationBody
-                        sidebarCategory="Opinions"
-                        sidebarItems={articles}
-                        story={misc}
-                    />
-                </Box>
+                <Grid container>
+                    <Grid
+                        item
+                        xs={0}
+                        md={1}
+                        sx={{
+                            position: "relative",
+                        }}
+                    >
+                        <Paper
+                            sx={{
+                                position: "sticky",
+                                display: { xs: "none", md: "flex" },
+                                justifyContent: "center",
+                                paddingTop: "1rem",
+                                paddingBottom: ".75rem",
+                                margin: "1.25rem",
+                                top: "35vh",
+                            }}
+                        >
+                            <ShareIcons color="primary" />
+                        </Paper>
+                    </Grid>
+                    <Grid item xs={12} md={11}>
+                        <Box sx={{ padding: "3rem 0" }}>
+                            <PublicationsHeader
+                                publication={misc}
+                                authorHref={authorHref}
+                            />
+                            <PublicationBody
+                                sidebarCategory="Opinions"
+                                sidebarItems={articles}
+                                story={misc}
+                            />
+                        </Box>
+                    </Grid>
+                </Grid>
             </Container>
         </Box>
     );
