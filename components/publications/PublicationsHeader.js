@@ -65,10 +65,8 @@ const PublicationsHeader = ({ publication, authorHref }) => {
                 <Box sx={{ marginTop: "2rem" }}>
                     <NativeImage
                         maxSize={1000}
-                        image={{
-                            url: publication.URLs[0],
-                            alt: "article",
-                        }}
+                        src={publication.URLs[0]}
+                        alt="publication"
                     />
                     <Box
                         sx={{

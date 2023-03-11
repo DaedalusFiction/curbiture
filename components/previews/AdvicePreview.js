@@ -39,7 +39,7 @@ const AdvicePreview = ({ item }) => {
                 >
                     {item.fields[2].value}
                 </Typography>
-                <Box>
+                {/* <Box>
                     <Typography
                         variant="h6"
                         sx={{ display: "inline-block", marginRight: ".35em" }}
@@ -57,7 +57,7 @@ const AdvicePreview = ({ item }) => {
                     >
                         <Link href={authorHref}>{item.fields[1].value}</Link>
                     </Typography>
-                </Box>
+                </Box> */}
             </Box>
             <Divider variant="inset" sx={{ margin: "1rem 0 1.5rem 0" }} />
         </Box>
