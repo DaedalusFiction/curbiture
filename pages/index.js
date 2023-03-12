@@ -45,7 +45,6 @@ export default function Home({ misc, advice, bestof, opinions }) {
                             </span>
                         </Typography>
                     </Box>
-                    <SocialMediaIcons color="secondary" />
                 </Grid>
                 <Grid item xs={12} md={8.875}>
                     <Grid container>
