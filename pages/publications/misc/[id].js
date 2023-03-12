@@ -29,19 +29,15 @@ const page = ({ articles, misc }) => {
                             position: "relative",
                         }}
                     >
-                        <Paper
+                        <Box
                             sx={{
                                 position: "sticky",
-                                display: { xs: "none", md: "flex" },
-                                justifyContent: "center",
-                                paddingTop: "1rem",
-                                paddingBottom: ".75rem",
-                                margin: "1.25rem",
-                                top: "35vh",
+                                top: "4rem",
+                                margin: "35vh 1.25rem 1.25rem 1.25rem",
                             }}
                         >
-                            <ShareIcons color="primary" />
-                        </Paper>
+                            <ShareIcons color="primary" direction="column" />
+                        </Box>
                     </Grid>
                     <Grid item xs={12} md={11}>
                         <Box sx={{ padding: "3rem 0" }}>

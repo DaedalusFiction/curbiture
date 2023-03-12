@@ -1,11 +1,12 @@
-import { IconButton, Tooltip, Typography } from "@mui/material";
+import { IconButton, Paper, Tooltip, Typography } from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import { Stack } from "@mui/system";
 import Link from "next/link";
+import { Reddit } from "@mui/icons-material";
 
-const ShareIcons = ({ fontSize, color }) => {
+const ShareIcons = ({ fontSize, color, direction }) => {
     const handleShare = (e) => {
         e.preventDefault();
 
@@ -21,8 +22,8 @@ const ShareIcons = ({ fontSize, color }) => {
                 link = `https://twitter.com/intent/tweet?url=${encodedAhref}`;
                 open(link);
                 break;
-            case "share-instagram":
-                link = `https://www.instagram.com/?url=${encodedAhref}`;
+            case "share-reddit":
+                link = `https://www.reddit.com/submit?url=${encodedAhref}`;
                 open(link);
                 break;
             default:
@@ -35,53 +36,59 @@ const ShareIcons = ({ fontSize, color }) => {
     };
 
     return (
-        <Stack direction="column" spacing={1}>
-            <Typography variant="h3" sx={{ fontSize: ".75rem" }}>
-                SHARE
-            </Typography>
-            <Link href="https://instagram.com">
-                <Tooltip title="instagram" placement="left">
-                    <IconButton
-                        aria-label="instagram"
-                        id="share-instagram"
-                        onClick={handleShare}
-                    >
-                        <InstagramIcon
-                            color={color}
-                            sx={{ fontSize: fontSize }}
-                        />
-                    </IconButton>
-                </Tooltip>
-            </Link>
-            <Link href="https://www.facebook.com/CurbitureCharlottesville/">
-                <Tooltip title="facebook" placement="left">
-                    <IconButton
-                        aria-label="facebook"
-                        id="share-facebook"
-                        onClick={handleShare}
-                    >
-                        <FacebookIcon
-                            color={color}
-                            sx={{ fontSize: fontSize }}
-                        />
-                    </IconButton>
-                </Tooltip>
-            </Link>
-            <Link href="https://twitter.com/curbiturecville">
-                <Tooltip title="twitter" placement="left">
-                    <IconButton
-                        aria-label="twitter"
-                        id="share-twitter"
-                        onClick={handleShare}
-                    >
-                        <TwitterIcon
-                            color={color}
-                            sx={{ fontSize: fontSize }}
-                        />
-                    </IconButton>
-                </Tooltip>
-            </Link>
-        </Stack>
+        <Paper
+            sx={{
+                display: { xs: "none", md: "flex" },
+                justifyContent: "center",
+                paddingTop: "1rem",
+                paddingBottom: ".75rem",
+            }}
+        >
+            <Stack direction={direction} spacing={1}>
+                <Typography variant="h3" sx={{ fontSize: ".75rem" }}>
+                    SHARE
+                </Typography>
+                <Link href="https://reddit.com">
+                    <Tooltip title="reddit" placement="left">
+                        <IconButton
+                            aria-label="reddit"
+                            id="share-reddit"
+                            onClick={handleShare}
+                        >
+                            <Reddit color={color} sx={{ fontSize: fontSize }} />
+                        </IconButton>
+                    </Tooltip>
+                </Link>
+                <Link href="https://www.facebook.com/CurbitureCharlottesville/">
+                    <Tooltip title="facebook" placement="left">
+                        <IconButton
+                            aria-label="facebook"
+                            id="share-facebook"
+                            onClick={handleShare}
+                        >
+                            <FacebookIcon
+                                color={color}
+                                sx={{ fontSize: fontSize }}
+                            />
+                        </IconButton>
+                    </Tooltip>
+                </Link>
+                <Link href="https://twitter.com/curbiturecville">
+                    <Tooltip title="twitter" placement="left">
+                        <IconButton
+                            aria-label="twitter"
+                            id="share-twitter"
+                            onClick={handleShare}
+                        >
+                            <TwitterIcon
+                                color={color}
+                                sx={{ fontSize: fontSize }}
+                            />
+                        </IconButton>
+                    </Tooltip>
+                </Link>
+            </Stack>
+        </Paper>
     );
 };
 

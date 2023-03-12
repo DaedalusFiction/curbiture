@@ -16,23 +16,46 @@ import PublicationBody from "../../../components/publications/PublicationBody";
 import Link from "next/link";
 import SidebarInfo from "../../../components/layout/SidebarInfo";
 import PublicationsHeader from "../../../components/publications/PublicationsHeader";
+import ShareIcons from "../../../components/general/ShareIcons";
 
 const page = ({ articles, story }) => {
     const authorHref = "/contributors/" + story.fields[1].value;
     return (
         <Box className="section">
             <Container>
-                <Box sx={{ padding: "3rem 0" }}>
-                    <PublicationsHeader
-                        publication={story}
-                        authorHref={authorHref}
-                    />
-                    <PublicationBody
-                        sidebarCategory="Opinions"
-                        sidebarItems={articles}
-                        story={story}
-                    />
-                </Box>
+                <Grid container>
+                    <Grid
+                        item
+                        xs={0}
+                        md={1}
+                        sx={{
+                            position: "relative",
+                        }}
+                    >
+                        <Box
+                            sx={{
+                                position: "sticky",
+                                top: "4rem",
+                                margin: "35vh 1.25rem 1.25rem 1.25rem",
+                            }}
+                        >
+                            <ShareIcons color="primary" direction="column" />
+                        </Box>
+                    </Grid>
+                    <Grid item xs={12} md={11}>
+                        <Box sx={{ padding: "3rem 0" }}>
+                            <PublicationsHeader
+                                publication={story}
+                                authorHref={authorHref}
+                            />
+                            <PublicationBody
+                                sidebarCategory="Opinions"
+                                sidebarItems={articles}
+                                story={story}
+                            />
+                        </Box>
+                    </Grid>
+                </Grid>
             </Container>
         </Box>
     );

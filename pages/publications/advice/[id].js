@@ -12,48 +12,73 @@ import {
 import { db } from "../../../firebase";
 import { Grid, Typography } from "@mui/material";
 import PublicationBody from "../../../components/publications/PublicationBody";
+import ShareIcons from "../../../components/general/ShareIcons";
 
 const page = ({ articles, misc }) => {
     return (
         <Box className="section">
             <Container>
-                <Box sx={{ paddingTop: "5rem" }}>
-                    <Grid container>
-                        <Grid item xs={12} md={8}>
-                            <Box
-                                sx={{
-                                    display: "flex",
-                                    gap: ".25em",
-                                }}
-                            >
-                                {misc.subCategories.map(
-                                    (subCategory, index) => {
-                                        return (
-                                            <Typography
-                                                key={index}
-                                                variant="caption"
-                                            >
-                                                [{subCategory}]
-                                            </Typography>
-                                        );
-                                    }
-                                )}
-                            </Box>
-                            <Typography
-                                sx={{ margin: ".25em 0", fontSize: "3rem" }}
-                                variant="h1"
-                            >
-                                {misc.fields[0].value}?
-                            </Typography>
-                        </Grid>
+                <Grid container>
+                    <Grid
+                        item
+                        xs={0}
+                        md={1}
+                        sx={{
+                            position: "relative",
+                        }}
+                    >
+                        <Box
+                            sx={{
+                                position: "sticky",
+                                top: "4rem",
+                                margin: "42vh 1.25rem 1.25rem 1.25rem",
+                            }}
+                        >
+                            <ShareIcons color="primary" direction="column" />
+                        </Box>
                     </Grid>
-
-                    <PublicationBody
-                        sidebarCategory="Opinions"
-                        sidebarItems={articles}
-                        story={misc}
-                    />
-                </Box>
+                    <Grid item xs={12} md={11}>
+                        <Box sx={{ paddingTop: "5rem" }}>
+                            <Grid container>
+                                <Grid item xs={12} md={8}>
+                                    <Box
+                                        sx={{
+                                            display: "flex",
+                                            gap: ".25em",
+                                        }}
+                                    >
+                                        {misc.subCategories.map(
+                                            (subCategory, index) => {
+                                                return (
+                                                    <Typography
+                                                        key={index}
+                                                        variant="caption"
+                                                    >
+                                                        [{subCategory}]
+                                                    </Typography>
+                                                );
+                                            }
+                                        )}
+                                    </Box>
+                                    <Typography
+                                        sx={{
+                                            margin: ".25em 0",
+                                            fontSize: "3rem",
+                                        }}
+                                        variant="h1"
+                                    >
+                                        {misc.fields[0].value}?
+                                    </Typography>
+                                </Grid>
+                            </Grid>
+                            <PublicationBody
+                                sidebarCategory="Opinions"
+                                sidebarItems={articles}
+                                story={misc}
+                            />
+                        </Box>
+                    </Grid>
+                </Grid>
             </Container>
         </Box>
     );
