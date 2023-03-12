@@ -1,7 +1,6 @@
 import { Divider, Grid, Typography } from "@mui/material";
 import { Box, Container } from "@mui/system";
 import Link from "next/link";
-import React, { useEffect } from "react";
 import PageLayout from "../../components/layout/PageLayout";
 import { collection, getDocs, orderBy, query } from "firebase/firestore";
 import { db } from "../../firebase";
@@ -18,7 +17,10 @@ const index = ({ upcomingEvents, pastEvents }) => {
         <Container maxWidth="md">
             <PageLayout name="Events">
                 <Box className="section">
-                    <Typography variant="h3" sx={{ textAlign: "center" }}>
+                    <Typography
+                        variant="h3"
+                        sx={{ textAlign: "center", marginBottom: "2rem" }}
+                    >
                         Upcoming Events
                     </Typography>
                     <Grid container spacing={4}>
@@ -42,7 +44,6 @@ const index = ({ upcomingEvents, pastEvents }) => {
                                                     variant="h3"
                                                     component="p"
                                                     sx={{
-                                                        margin: ".1em 0 .35em 0",
                                                         fontSize: {
                                                             xs: "2rem",
                                                             md: "3rem",
@@ -51,18 +52,19 @@ const index = ({ upcomingEvents, pastEvents }) => {
                                                 >
                                                     {event.fields[0].value}
                                                 </Typography>
-                                                {/* <Typography
-                                                    sx={{ fontStyle: "italic" }}
+                                                <Typography
+                                                    sx={{
+                                                        fontStyle: "italic",
+                                                        marginBottom: "1em",
+                                                    }}
                                                 >
-                                                    {event.description}
-                                                </Typography> */}
-                                                <Divider
-                                                    sx={{ margin: "1rem 0" }}
-                                                />
-                                                <Typography>
                                                     {event.fields[3].value}
                                                 </Typography>
-                                                {event.fields[4].value && (
+
+                                                <Typography>
+                                                    {event.fields[4].value}
+                                                </Typography>
+                                                {event.fields[5].value && (
                                                     <>
                                                         <br />
                                                         <Link
@@ -107,7 +109,10 @@ const index = ({ upcomingEvents, pastEvents }) => {
                             );
                         })}
                     </Grid>
-                    <Typography variant="h3" sx={{ textAlign: "center" }}>
+                    <Typography
+                        variant="h3"
+                        sx={{ textAlign: "center", marginBottom: "2rem" }}
+                    >
                         Past Events
                     </Typography>
                     <Grid container spacing={4}>
@@ -225,27 +230,29 @@ const index = ({ upcomingEvents, pastEvents }) => {
 };
 
 export const getServerSideProps = async (context) => {
-    const convertDate = (date) => {
-        let newDateArray = date.split("-");
-        let firstItem = newDateArray.shift();
-        newDateArray.push(firstItem);
-        return newDateArray.join("/");
-    };
     const eventsRef = collection(db, "events");
     const eventsQuery = query(eventsRef, orderBy("dateUploaded", "desc"));
 
     const eventsSnapshot = await getDocs(eventsQuery);
-    const currentDate = new Date().toLocaleDateString("en-US");
-
-    let upcomingEvents = [];
-    let pastEvents = [];
+    const currentDate = new Date();
+    console.log("current date ", currentDate);
+    let upcomingEventsInitial = [];
+    let pastEventsInitial = [];
     eventsSnapshot.docs.forEach((doc, index) => {
-        if (doc.data().fields[2] > currentDate) {
-            upcomingEvents = [...upcomingEvents, doc.data()];
+        if (new Date(doc.data().fields[2].value) > currentDate - 86400000) {
+            // console.log(currentDate - new Date(doc.data().fields[2].value));
+            upcomingEventsInitial = [...upcomingEventsInitial, doc.data()];
         } else {
-            pastEvents = [...pastEvents, doc.data()];
+            pastEventsInitial = [...pastEventsInitial, doc.data()];
         }
     });
+
+    const upcomingEvents = upcomingEventsInitial.sort(
+        (a, b) => new Date(a.fields[2].value) - new Date(b.fields[2].value)
+    );
+    const pastEvents = pastEventsInitial.sort(
+        (a, b) => new Date(b.fields[2].value) - new Date(a.fields[2].value)
+    );
 
     return {
         props: {

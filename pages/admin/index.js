@@ -10,7 +10,7 @@ import FirestoreListing from "../../components/admin/FirestoreListing.js";
 import { contributorConfig, eventConfig, uploadConfig } from "../../siteInfo";
 import PageLayout from "../../components/layout/PageLayout.js";
 import FirestoreSubmissionsListing from "../../components/admin/FirestoreSubmissionsListing.js";
-import FirestoreImageSubmissionsListing from "../../components/admin/FirestoreImageSubmissionsListing.js";
+import FirebaseEventUploadForm from "../../components/admin/FirebaseEventUploadForm.js";
 import FirebaseContributorUploadForm from "../../components/admin/FirebaseContributorUploadForm.js";
 import FirebaseContributorListing from "../../components/admin/FirebaseContributorListing.js";
 
@@ -66,7 +66,7 @@ const Admin = () => {
                                     />
                                 </Grid>
                                 <Grid item xs={12} md={6}>
-                                    <FirebaseUploadForm
+                                    <FirebaseEventUploadForm
                                         config={eventConfig}
                                         folder="events"
                                         updateCounter={updateCounter}
@@ -74,12 +74,12 @@ const Admin = () => {
                                     />
                                 </Grid>
                                 <Grid item xs={12} md={6}>
-                                    <FirestoreListing
+                                    {/* <FirestoreEventListing
                                         // category={uploadConfig.category}
                                         folder="events"
                                         updateCounter={updateCounter}
                                         setUpdateCounter={setUpdateCounter}
-                                    />
+                                    /> */}
                                 </Grid>
                                 <Grid item xs={12} md={6}>
                                     <FirebaseContributorUploadForm

@@ -127,6 +127,7 @@ const eventConfig = {
         { name: "Title", type: "text", value: "" },
         { name: "Location", type: "text", value: "" },
         { name: "Date", type: "date", value: "" },
+        { name: "Time", type: "text", value: "" },
         {
             name: "Description",
             type: "text",
@@ -135,8 +136,6 @@ const eventConfig = {
             rows: 4,
         },
         { name: "href", type: "text", value: "" },
-        // { name: "Image Height", type: "text", value: 0 },
-        // { name: "Image Width", type: "text", value: 0 },
     ],
 };
 
