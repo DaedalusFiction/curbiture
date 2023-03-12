@@ -321,9 +321,9 @@ export default function Home({ misc, advice, bestof, opinions }) {
                             fontStyle: "italic",
                         }}
                     >
-                        Do you have an alternative event in Charlottesville
-                        coming up that you&rsquo;d like to get the word out on?
-                        Let us know and we&rsquo;ll promote it here, for free!
+                        Do you have an upcoming event in Charlottesville that
+                        you would like to promote? Let us know and we&rsquo;ll
+                        list it here, for free!
                     </Typography>
                 </Box>
             </Box>

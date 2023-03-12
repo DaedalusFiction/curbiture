@@ -7,7 +7,7 @@ import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../firebase.js";
 import FirebaseUploadForm from "../../components/admin/FirebaseUploadForm.js";
 import FirestoreListing from "../../components/admin/FirestoreListing.js";
-import { contributorConfig, uploadConfig } from "../../siteInfo";
+import { contributorConfig, eventConfig, uploadConfig } from "../../siteInfo";
 import PageLayout from "../../components/layout/PageLayout.js";
 import FirestoreSubmissionsListing from "../../components/admin/FirestoreSubmissionsListing.js";
 import FirestoreImageSubmissionsListing from "../../components/admin/FirestoreImageSubmissionsListing.js";
@@ -49,26 +49,6 @@ const Admin = () => {
                     {isAdmin ? (
                         <Box sx={{ marginBottom: "3rem" }}>
                             <Grid container spacing={8}>
-                                <Grid item xs={12}>
-                                    <Container maxWidth="lg">
-                                        <FirestoreSubmissionsListing
-                                            // category={uploadConfig.category}
-                                            folder="storysubmissions"
-                                            updateCounter={updateCounter}
-                                            setUpdateCounter={setUpdateCounter}
-                                        />
-                                    </Container>
-                                </Grid>
-                                <Grid item xs={12}>
-                                    <Container maxWidth="lg">
-                                        <FirestoreImageSubmissionsListing
-                                            // category={uploadConfig.category}
-                                            folder="imagesubmissions"
-                                            updateCounter={updateCounter}
-                                            setUpdateCounter={setUpdateCounter}
-                                        />
-                                    </Container>
-                                </Grid>
                                 <Grid item xs={12} md={6}>
                                     <FirebaseUploadForm
                                         config={uploadConfig}
@@ -81,6 +61,22 @@ const Admin = () => {
                                     <FirestoreListing
                                         // category={uploadConfig.category}
                                         folder="publications"
+                                        updateCounter={updateCounter}
+                                        setUpdateCounter={setUpdateCounter}
+                                    />
+                                </Grid>
+                                <Grid item xs={12} md={6}>
+                                    <FirebaseUploadForm
+                                        config={eventConfig}
+                                        folder="events"
+                                        updateCounter={updateCounter}
+                                        setUpdateCounter={setUpdateCounter}
+                                    />
+                                </Grid>
+                                <Grid item xs={12} md={6}>
+                                    <FirestoreListing
+                                        // category={uploadConfig.category}
+                                        folder="events"
                                         updateCounter={updateCounter}
                                         setUpdateCounter={setUpdateCounter}
                                     />

@@ -120,6 +120,25 @@ const uploadConfig = {
         { name: "Artist", type: "text", value: "" },
     ],
 };
+const eventConfig = {
+    categories: [],
+    subCategories: [],
+    fields: [
+        { name: "Title", type: "text", value: "" },
+        { name: "Location", type: "text", value: "" },
+        { name: "Date", type: "date", value: "" },
+        {
+            name: "Description",
+            type: "text",
+            value: "",
+            multiline: true,
+            rows: 4,
+        },
+        { name: "href", type: "text", value: "" },
+        // { name: "Image Height", type: "text", value: 0 },
+        // { name: "Image Width", type: "text", value: 0 },
+    ],
+};
 
 const subscribeConfig = {
     website: "CURBITURE",
@@ -329,6 +348,7 @@ export {
     header,
     uploadCategories,
     uploadConfig,
+    eventConfig,
     subscribeConfig,
     contributorConfig,
     textSubmissionsConfig,
