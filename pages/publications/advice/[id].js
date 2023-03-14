@@ -12,12 +12,12 @@ import {
 import { db } from "../../../firebase";
 import { Grid, Typography } from "@mui/material";
 import PublicationBody from "../../../components/publications/PublicationBody";
-import ShareIcons from "../../../components/general/ShareIcons";
+// import ShareIcons from "../../../components/general/ShareIcons";
 
 const page = ({ articles, misc }) => {
     return (
         <Box className="section">
-            {/* <Container>
+            <Container>
                 <Grid container>
                     <Grid
                         item
@@ -34,7 +34,7 @@ const page = ({ articles, misc }) => {
                                 margin: "42vh 1.25rem 1.25rem 1.25rem",
                             }}
                         >
-                            <ShareIcons color="primary" direction="column" />
+                            {/* <ShareIcons color="primary" direction="column" /> */}
                         </Box>
                     </Grid>
                     <Grid item xs={12} md={11}>
@@ -79,7 +79,7 @@ const page = ({ articles, misc }) => {
                         </Box>
                     </Grid>
                 </Grid>
-            </Container> */}
+            </Container>
         </Box>
     );
 };
