@@ -19,7 +19,7 @@ const page = ({ articles, misc }) => {
         <Box className="section">
             <Container>
                 <Grid container>
-                    <Grid
+                    {/* <Grid
                         item
                         xs={0}
                         md={1}
@@ -36,7 +36,7 @@ const page = ({ articles, misc }) => {
                         >
                             <ShareIcons color="primary" direction="column" />
                         </Box>
-                    </Grid>
+                    </Grid> */}
                     <Grid item xs={12} md={11}>
                         <Box sx={{ paddingTop: "5rem" }}>
                             <Grid container>
