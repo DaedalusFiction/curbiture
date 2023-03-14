@@ -1,10 +1,9 @@
 import { IconButton, Paper, Tooltip, Typography } from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
-import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import { Stack } from "@mui/system";
 import Link from "next/link";
-import { Reddit } from "@mui/icons-material";
+import Reddit from "@mui/icons-material/Reddit";
 
 const ShareIcons = ({ fontSize, color, direction }) => {
     const handleShare = (e) => {
@@ -12,7 +11,7 @@ const ShareIcons = ({ fontSize, color, direction }) => {
 
         const ahref = window.location.href;
         const encodedAhref = encodeURIComponent(ahref);
-        var link;
+        let link;
         switch (e.currentTarget.id) {
             case "share-facebook":
                 link = `https://www.facebook.com/sharer/sharer.php?u=${ahref}`;
