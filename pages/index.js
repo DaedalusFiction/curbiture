@@ -377,7 +377,7 @@ export const getServerSideProps = async (context) => {
         publicationsRef,
         where("categories", "array-contains", "misc"),
         orderBy("dateUploaded", "desc"),
-        limit(1)
+        limit(2)
     );
     const outandaboutQuery = query(
         collection(db, "outandabout"),
