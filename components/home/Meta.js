@@ -13,6 +13,31 @@ const Meta = () => {
                 ) : (
                     <title>{`${basePath.toUpperCase()} - ${siteName}`}</title>
                 )}
+                <link
+                    rel="apple-touch-icon"
+                    sizes="180x180"
+                    href="/images/favicons/apple-touch-icon.png"
+                />
+                <link
+                    rel="icon"
+                    type="image/png"
+                    sizes="32x32"
+                    href="/images/favicons/favicon-32x32.png"
+                />
+                <link
+                    rel="icon"
+                    type="image/png"
+                    sizes="16x16"
+                    href="/images/favicons/favicon-16x16.png"
+                />
+                <link rel="manifest" href="/images/favicons/site.webmanifest" />
+                <link
+                    rel="mask-icon"
+                    href="/safari-pinned-tab.svg"
+                    color="#5bbad5"
+                />
+                <meta name="msapplication-TileColor" content="#da532c" />
+                <meta name="theme-color" content="#ffffff"></meta>
                 {/* <meta
                     name="keywords"
                     content="literature, literary, stories, story, magazine, alternative, non-fiction, journal, charlottesville, virginia, humor, advice, opinions"
@@ -65,7 +90,7 @@ const Meta = () => {
                     name="og:site_name"
                     content="Curbiture"
                 />
-                <link
+                {/* <link
                     data-n-head="ssr"
                     rel="apple-touch-icon"
                     sizes="180x180"
@@ -90,7 +115,7 @@ const Meta = () => {
                     rel="icon"
                     type="image/x-icon"
                     href="/images/favicons/favicon.ico"
-                ></link>
+                ></link> */}
             </Head>
         </div>
     );
