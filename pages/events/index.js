@@ -69,7 +69,7 @@ const index = ({ upcomingEvents, pastEvents }) => {
                                                         <br />
                                                         <Link
                                                             href={
-                                                                event.fields[4]
+                                                                event.fields[5]
                                                                     .value
                                                             }
                                                         >

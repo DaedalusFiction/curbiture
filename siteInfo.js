@@ -33,6 +33,30 @@ const uploadCategories = [
                     alt: "alt upload image text",
                 },
             },
+            {
+                name: "interview",
+                href: "/publications/misc/interview",
+                image: {
+                    url: "/images/placeholder.webp",
+                    alt: "alt upload image text",
+                },
+            },
+            {
+                name: "news",
+                href: "/publications/misc/news",
+                image: {
+                    url: "/images/placeholder.webp",
+                    alt: "alt upload image text",
+                },
+            },
+            {
+                name: "poetry",
+                href: "/publications/misc/poetry",
+                image: {
+                    url: "/images/placeholder.webp",
+                    alt: "alt upload image text",
+                },
+            },
         ],
     },
     {
@@ -101,6 +125,33 @@ const uploadCategories = [
             },
         ],
     },
+    // {
+    //     name: "out and about",
+    //     href: "/publications/out-and-about",
+    //     image: { url: "/images/placeholder.webp", alt: "alt text" },
+    //     subCategories: [
+    //         {
+    //             name: "fashion",
+    //             href: "/publications/out-and-about/fashion",
+    //             image: { url: "/images/placeholder.webp", alt: "alt text" },
+    //         },
+    //         {
+    //             name: "animals",
+    //             href: "/publications/out-and-about/animals",
+    //             image: { url: "/images/placeholder.webp", alt: "alt text" },
+    //         },
+    //         {
+    //             name: "performances",
+    //             href: "/publications/out-and-about/performances",
+    //             image: { url: "/images/placeholder.webp", alt: "alt text" },
+    //         },
+    //         {
+    //             name: "characters",
+    //             href: "/publications/out-and-about/characters",
+    //             image: { url: "/images/placeholder.webp", alt: "alt text" },
+    //         },
+    //     ],
+    // },
 ];
 
 const uploadConfig = {
@@ -136,6 +187,23 @@ const eventConfig = {
             rows: 4,
         },
         { name: "href", type: "text", value: "" },
+    ],
+};
+const outandaboutConfig = {
+    categories: [],
+    subCategories: [],
+    fields: [
+        { name: "Title", type: "text", value: "" },
+        { name: "Location", type: "text", value: "" },
+        { name: "Date", type: "date", value: "" },
+        { name: "Time", type: "text", value: "" },
+        {
+            name: "Description",
+            type: "text",
+            value: "",
+            multiline: true,
+            rows: 4,
+        },
     ],
 };
 
@@ -348,6 +416,7 @@ export {
     uploadCategories,
     uploadConfig,
     eventConfig,
+    outandaboutConfig,
     subscribeConfig,
     contributorConfig,
     textSubmissionsConfig,

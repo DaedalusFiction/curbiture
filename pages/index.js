@@ -19,8 +19,9 @@ import OpinionPreview from "../components/previews/OpinionPreview";
 import theme from "../styles/themes/theme";
 import MiscPreview from "../components/previews/MiscPreview";
 import SidebarInfo from "../components/layout/SidebarInfo";
+import OutandAboutPreview from "../components/previews/OutandAboutPreview";
 
-export default function Home({ misc, advice, bestof, opinions }) {
+export default function Home({ misc, outandabout, advice, bestof, opinions }) {
     return (
         <Container maxWidth="xl" sx={{ paddingTop: "5.5rem" }}>
             <Meta />
@@ -69,6 +70,23 @@ export default function Home({ misc, advice, bestof, opinions }) {
                                         <MiscPreview misc={misc} key={index} />
                                     );
                                 })}
+                            <br />
+                            <Typography
+                                variant="h3"
+                                sx={{ textAlign: "center" }}
+                            >
+                                Out & About
+                            </Typography>
+                            <Divider sx={{ margin: ".5rem 0 1rem 0" }} />
+                            {outandabout &&
+                                outandabout.map((item, index) => {
+                                    return (
+                                        <OutandAboutPreview
+                                            item={item}
+                                            key={index}
+                                        />
+                                    );
+                                })}
                         </Grid>
                         <Grid
                             item
@@ -111,6 +129,27 @@ export default function Home({ misc, advice, bestof, opinions }) {
                                         />
                                     );
                                 })}
+                            <Box
+                                sx={{
+                                    margin: "4rem 2rem",
+                                }}
+                            >
+                                <Typography sx={{}}>
+                                    <strong style={{ fontSize: "1.5rem" }}>
+                                        Curbiture
+                                    </strong>
+                                </Typography>
+                                <Typography sx={{ fontStyle: "italic" }}>
+                                    &lsquo;c&#601;r-bi-ch&#601;r
+                                </Typography>
+                                <Typography sx={{}}>
+                                    1. (noun) Furniture you find on the curb
+                                </Typography>
+                                <Typography sx={{}}>
+                                    2. (noun) Contact made between one&rsquo;s
+                                    hubcap(s) and the curb
+                                </Typography>
+                            </Box>
                         </Grid>
 
                         <Grid item xs={12}>
@@ -340,6 +379,11 @@ export const getServerSideProps = async (context) => {
         orderBy("dateUploaded", "desc"),
         limit(1)
     );
+    const outandaboutQuery = query(
+        collection(db, "outandabout"),
+        orderBy("dateUploaded", "desc"),
+        limit(2)
+    );
     const adviceQuery = query(
         publicationsRef,
         where("categories", "array-contains", "advice"),
@@ -363,12 +407,17 @@ export const getServerSideProps = async (context) => {
     );
 
     const miscSnapshot = await getDocs(miscQuery);
+    const outandaboutSnapshot = await getDocs(outandaboutQuery);
     const adviceSnapshot = await getDocs(adviceQuery);
     const bestofSnapshot = await getDocs(bestofQuery);
     const opinionsSnapshot = await getDocs(opinionsQuery);
     let misc = [];
     miscSnapshot.docs.forEach((doc, index) => {
         misc = [...misc, doc.data()];
+    });
+    let outandabout = [];
+    outandaboutSnapshot.docs.forEach((doc, index) => {
+        outandabout = [...outandabout, doc.data()];
     });
     let advice = [];
     adviceSnapshot.docs.forEach((doc, index) => {
@@ -386,6 +435,7 @@ export const getServerSideProps = async (context) => {
     return {
         props: {
             misc,
+            outandabout,
             advice,
             bestof,
             opinions,

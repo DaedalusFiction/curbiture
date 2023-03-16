@@ -7,10 +7,16 @@ import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../firebase.js";
 import FirebaseUploadForm from "../../components/admin/FirebaseUploadForm.js";
 import FirestoreListing from "../../components/admin/FirestoreListing.js";
-import { contributorConfig, eventConfig, uploadConfig } from "../../siteInfo";
+import {
+    contributorConfig,
+    eventConfig,
+    outandaboutConfig,
+    uploadConfig,
+} from "../../siteInfo";
 import PageLayout from "../../components/layout/PageLayout.js";
 import FirestoreSubmissionsListing from "../../components/admin/FirestoreSubmissionsListing.js";
 import FirebaseEventUploadForm from "../../components/admin/FirebaseEventUploadForm.js";
+import FirebaseOutandaboutUploadForm from "../../components/admin/FirebaseOutandaboutUploadForm.js";
 import FirebaseContributorUploadForm from "../../components/admin/FirebaseContributorUploadForm.js";
 import FirebaseContributorListing from "../../components/admin/FirebaseContributorListing.js";
 
@@ -74,12 +80,12 @@ const Admin = () => {
                                     />
                                 </Grid>
                                 <Grid item xs={12} md={6}>
-                                    {/* <FirestoreEventListing
-                                        // category={uploadConfig.category}
-                                        folder="events"
+                                    <FirebaseOutandaboutUploadForm
+                                        config={outandaboutConfig}
+                                        folder="outandabout"
                                         updateCounter={updateCounter}
                                         setUpdateCounter={setUpdateCounter}
-                                    /> */}
+                                    />
                                 </Grid>
                                 <Grid item xs={12} md={6}>
                                     <FirebaseContributorUploadForm
