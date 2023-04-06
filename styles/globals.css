@@ -20,6 +20,11 @@ a {
     box-sizing: border-box;
 }
 
+.publication-body a {
+    font-weight: 600;
+    text-decoration: underline;
+}
+
 .section {
     padding: 4rem 0;
 }

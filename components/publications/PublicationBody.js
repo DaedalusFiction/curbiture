@@ -28,7 +28,7 @@ const PublicationBody = ({ sidebarItems, story, sidebarCategory }) => {
         getStory();
     }, [story]);
     return (
-        <Grid container className="section" spacing={8}>
+        <Grid container className="section publication-body" spacing={8}>
             <Grid item xs={12} md={8}>
                 <div
                     style={{ whiteSpace: "pre-wrap" }}
