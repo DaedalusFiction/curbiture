@@ -22,7 +22,8 @@ let theme = createTheme({
         },
         custom: {
             dark: "#272D2D",
-            darkMuted: "#757575",
+            // darkMuted: "#757575",
+            darkMuted: "#4d4d4d",
             light: "#F6F8FF",
             lightMuted: "#cacaca",
         },
