@@ -16,67 +16,75 @@ const PublicationsHeader = ({ publication, authorHref }) => {
                 <Box
                     sx={{
                         display: "flex",
-                        gap: ".25em",
+                        flexDirection: "column",
+                        justifyContent: "center",
+                        height: "100%",
                     }}
                 >
-                    {publication.subCategories.map((subCategory, index) => {
-                        return (
-                            <Typography key={index} variant="caption">
-                                [{subCategory}]
-                            </Typography>
-                        );
-                    })}
-                </Box>
-                <Typography
-                    sx={{
-                        margin: ".25em 0",
-                        fontSize: "3.5rem",
-                        fontWeight: "600",
-                    }}
-                    variant="h1"
-                >
-                    {publication.fields[0].value}
-                </Typography>
-
-                <Box>
-                    <Typography
-                        variant="h6"
-                        sx={{
-                            display: "inline-block",
-                            marginRight: ".5em",
-                        }}
-                    >
-                        by
-                    </Typography>
-                    <Typography
-                        className="link"
-                        variant="h5"
-                        component="p"
-                        sx={{
-                            textTransform: "uppercase",
-                            display: "inline-block",
-                        }}
-                    >
-                        <Link href={authorHref}>
-                            {publication.fields[1].value}
-                        </Link>
-                    </Typography>
-                </Box>
-                <Box sx={{ marginTop: "2rem" }}>
-                    <NativeImage
-                        maxSize={1000}
-                        src={publication.URLs[0]}
-                        alt="publication"
-                    />
                     <Box
                         sx={{
                             display: "flex",
-                            justifyContent: "end",
+                            gap: ".25em",
                         }}
                     >
-                        <Typography variant="caption">
-                            {publication.fields[4].value}
+                        {publication.subCategories.map((subCategory, index) => {
+                            return (
+                                <Typography key={index} variant="caption">
+                                    [{subCategory}]
+                                </Typography>
+                            );
+                        })}
+                    </Box>
+                    <Typography
+                        sx={{
+                            margin: ".25em 0",
+                            fontSize: "3.5rem",
+                            fontWeight: "600",
+                        }}
+                        variant="h1"
+                    >
+                        {publication.fields[0].value}
+                    </Typography>
+                    <Box>
+                        <Typography
+                            variant="h6"
+                            sx={{
+                                display: "inline-block",
+                                marginRight: ".5em",
+                            }}
+                        >
+                            by
                         </Typography>
+                        <Typography
+                            className="link"
+                            variant="h5"
+                            component="p"
+                            sx={{
+                                textTransform: "uppercase",
+                                display: "inline-block",
+                            }}
+                        >
+                            <Link href={authorHref}>
+                                {publication.fields[1].value}
+                            </Link>
+                        </Typography>
+                    </Box>
+                    <Box sx={{ marginTop: "2rem" }}>
+                        <NativeImage
+                            maxSize={1000}
+                            src={publication.URLs[0]}
+                            alt="publication"
+                        />
+                        <Box
+                            sx={{
+                                display: "flex",
+                                justifyContent: "end",
+                            }}
+                        >
+                            <Typography variant="caption">
+                                {publication.fields[4].value}
+                            </Typography>
+                        </Box>
                     </Box>
                 </Box>
             </Grid>

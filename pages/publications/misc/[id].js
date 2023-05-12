@@ -13,7 +13,7 @@ import { db } from "../../../firebase";
 import PublicationBody from "../../../components/publications/PublicationBody";
 import PublicationsHeader from "../../../components/publications/PublicationsHeader";
 import ShareIcons from "../../../components/general/ShareIcons";
-import { Grid, Paper } from "@mui/material";
+import { Grid } from "@mui/material";
 
 const page = ({ articles, misc }) => {
     const authorHref = "/contributors/" + misc.fields[1].value;
@@ -33,14 +33,17 @@ const page = ({ articles, misc }) => {
                             sx={{
                                 position: "sticky",
                                 top: "4rem",
-                                margin: "35vh 1.25rem 1.25rem 1.25rem",
+                                margin: {
+                                    xs: "none",
+                                    md: "35vh 1.25rem 1.25rem 1.25rem",
+                                },
                             }}
                         >
                             <ShareIcons color="primary" direction="column" />
                         </Box>
                     </Grid>
                     <Grid item xs={12} md={11}>
-                        <Box sx={{ padding: "3rem 0" }}>
+                        <Box sx={{ padding: "1rem 0 3rem 0" }}>
                             <PublicationsHeader
                                 publication={misc}
                                 authorHref={authorHref}

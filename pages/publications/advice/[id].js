@@ -31,7 +31,10 @@ const page = ({ articles, misc }) => {
                             sx={{
                                 position: "sticky",
                                 top: "4rem",
-                                margin: "42vh 1.25rem 1.25rem 1.25rem",
+                                margin: {
+                                    xs: "none",
+                                    md: "42vh 1.25rem 1.25rem 1.25rem",
+                                },
                             }}
                         >
                             <ShareIcons color="primary" direction="column" />

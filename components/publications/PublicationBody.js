@@ -28,8 +28,8 @@ const PublicationBody = ({ sidebarItems, story, sidebarCategory }) => {
         getStory();
     }, [story]);
     return (
-        <Grid container className="section publication-body" spacing={8}>
-            <Grid item xs={12} md={8}>
+        <Grid container className=" publication-body" columnSpacing={8}>
+            <Grid item xs={12} md={7.75}>
                 <div
                     style={{ whiteSpace: "pre-wrap" }}
                     id="storyBody"
@@ -49,7 +49,7 @@ const PublicationBody = ({ sidebarItems, story, sidebarCategory }) => {
                     })}
                 </Typography>
             </Grid>
-            <Grid item xs={12} md={4}>
+            <Grid item xs={12} md={4.25}>
                 <Box className="sticky">
                     <PreviewsSidebar
                         sidebarCategory={sidebarCategory}

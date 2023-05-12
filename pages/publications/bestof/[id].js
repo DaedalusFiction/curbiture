@@ -36,7 +36,7 @@ const page = ({ articles, story }) => {
                             sx={{
                                 position: "sticky",
                                 top: "4rem",
-                                margin: "35vh 1.25rem 1.25rem 1.25rem",
+                                margin: { md: "35vh 1.25rem 1.25rem 1.25rem" },
                             }}
                         >
                             <ShareIcons color="primary" direction="column" />
