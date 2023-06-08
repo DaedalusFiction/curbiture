@@ -1,6 +1,6 @@
 import { Button, Grid, Input, TextField, Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import { doc, getDoc, setDoc } from "firebase/firestore";
+import { addDoc, doc, getDoc, setDoc } from "firebase/firestore";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import Image from "next/image";
 import React from "react";
@@ -213,23 +213,15 @@ const FirebaseUploadForm = ({
                                             downloadURLs.length >=
                                             selectedImages.length
                                         ) {
-                                            setDoc(
-                                                doc(
-                                                    db,
-                                                    folder,
-                                                    formData.fields[0].value
-                                                ),
-                                                {
-                                                    ...formData,
-                                                    id: formData.fields[0]
-                                                        .value,
-                                                    markdownURL: textFileURL,
-                                                    markdownFileName:
-                                                        selectedTextFile.name,
-                                                    URLs: downloadURLs,
-                                                    dateUploaded: Date.now(),
-                                                }
-                                            );
+                                            addDoc(collection(db, folder), {
+                                                ...formData,
+                                                id: formData.fields[0].value,
+                                                markdownURL: textFileURL,
+                                                markdownFileName:
+                                                    selectedTextFile.name,
+                                                URLs: downloadURLs,
+                                                dateUploaded: Date.now(),
+                                            });
                                         }
 
                                         setFormData(
