@@ -69,13 +69,10 @@ const FirebaseEventUploadForm = ({
                 display: "flex",
                 flexDirection: "column",
                 gap: "1rem",
-                backgroundColor: theme.palette.background.accent,
                 padding: "1em",
                 borderRadius: "5px",
             }}
         >
-            <Typography variant="h3">Upload new item to {folder}.</Typography>
-
             {formData.fields.map((field, index) => {
                 return (
                     <TextField
