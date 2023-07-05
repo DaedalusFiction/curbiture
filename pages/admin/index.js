@@ -47,7 +47,7 @@ const Admin = () => {
                             </Box>
                         )}
                     </Container>
-                    {!isAdmin ? (
+                    {isAdmin ? (
                         <Box sx={{ marginBottom: "3rem" }}>
                             <AdminAccordion />
                         </Box>

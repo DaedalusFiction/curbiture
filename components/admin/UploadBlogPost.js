@@ -216,14 +216,21 @@ const FirebaseUploadForm = ({
                                             downloadURLs.length >=
                                             selectedImages.length
                                         ) {
-                                            addDoc(collection(db, folder), {
-                                                ...formData,
-                                                markdownURL: textFileURL,
-                                                markdownFileName:
-                                                    selectedTextFile.name,
-                                                URLs: downloadURLs,
-                                                dateUploaded: Date.now(),
-                                            });
+                                            setDoc(
+                                                doc(
+                                                    db,
+                                                    folder,
+                                                    formData.fields[0].value
+                                                ),
+                                                {
+                                                    ...formData,
+                                                    markdownURL: textFileURL,
+                                                    markdownFileName:
+                                                        selectedTextFile.name,
+                                                    URLs: downloadURLs,
+                                                    dateUploaded: Date.now(),
+                                                }
+                                            );
                                         }
 
                                         setFormData(
